@@ -6,9 +6,9 @@
 	<title> Register Account </title>
 	</head>
 	
-	<header> <h1>Registration</h1> </header>
+	<header><center><h1>Registration</h1></center></header>
 	
-	<nav>
+	<nav><center>
 	
 		<table>
 			<tr> 
@@ -21,7 +21,7 @@
 			</tr>
 		</table><br>
 	
-	</nav>
+	</center></nav>
 	
 	<body>
 		<form>
@@ -30,9 +30,9 @@
 				<label for = "usrName">Username:</label>
 				<input type = "text" id = "usrName" name = "usrName">
 				<label for = "email">Email:</label>
-				<input type = "text" id = "email" name = "email">
+				<input type = "email" id = "email" name = "email">
 				<label for = "email">Re-Enter Email:</label>
-				<input type = "text" id = "email" name = "email"><br><br>
+				<input type = "email" id = "email" name = "email"><br><br>
 				<label for = "usrPswrd">Password:</label>
 				<input type = "password" id = "usrPswrd" name = "usrPswrd">
 				<label for = "usrPswrd">Re-Enter Password:</label>
@@ -42,12 +42,18 @@
 			<fieldset>
 				<legend><b>Payment Information (Optional):</b></legend><br>
 				<label for = "cardNum">Card Number:</label>
-				<input type = "text" id = cardNum name = "cardNum">
-			</fieldset>
+				<input type = "text" size  = "16" id = "cardNum" name = "cardNum">
+				<label for = "date">Expiration Date:</label>
+				<input type = "date" id = "date" name = "date">
+				<label for = "code">CVV:</label>
+				<input type = "text" maxlength = "3" size = "3" id = "code" name = "code"><br><br>
+			</fieldset><br>
+			
+			<input type = "submit" value = "Create Account">
 		
 		</form>
 	</body>
-	
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	<footer>
 	
 		<h3><b>Contact Information:</b></h3>
