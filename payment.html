@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang = "eng">
+	<head>
+	<meta charset = "utf-8">	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Restaurant's Home Page </title>
+	</head>
+	
+	<header><center>
+	
+	<table>
+		<tr>
+			<td bgcolor = "tomato"><font color = "ffffb3"><h1>Restaurant's Home Page</h1></font></td>
+		</tr>
+	</table><br>
+	
+	</center></header>
+	
+	<nav> <center>
+	
+		<table>
+			<tr> 
+				<td><a href = "menu.html">Menu </a>&nbsp&nbsp&nbsp</td>
+				<td><a href = "about_us.html">About Us</a>&nbsp&nbsp&nbsp</td>
+				<td>Location&nbsp&nbsp&nbsp</td>
+				<td><a href = "registration.html">Create Account</a>&nbsp&nbsp&nbsp</td>
+				<td><a href = "orderonline.html">Order Online</a>&nbsp&nbsp&nbsp</td>
+				<td><a href = "faq.html">FAQ</a></td>
+			</tr>
+		</table>
+	
+	</center></nav>
+	<br>
+	
+	<body bgcolor = "tomato">
+	<center>
+		<h2>Items in your cart</h2>
+		<table border=3px>
+			<tr>
+				<th>item</th>
+		    	<th>quantity</th>
+		    	<th>price</th>
+		  	</tr>
+		  	<tr>
+		    	<td>Xialong Bao (Soup Dumplings)</td>
+		    	<td>x1</td>
+		    	<td>$10.00</td>
+		  	</tr>
+		  	<tr>
+		    	<td>Har Gao (Soup Dumplings)</td>
+		    	<td>x2</td>
+		    	<td>$18.00</td>
+		  	</tr>
+		</table>
+		<p>Total Price: <strong>$38.00</strong></p>
+	
+		<hr>
+        <form action="">      <!--Location of Server-->
+            <h2>Delivery Address</h2>
+            	<div>
+            		<label for="name">First Name: </label>
+            		<input type="text" name="fname" placeholder="Kapil Kungwani" required>
+            		<label for="name">Last Name: </label>
+            		<input type="text" name="lname" placeholder="Kapil Kungwani" required>
+            		<label for = "phoneNumber">Phone Number: </label>
+            		<input type="number" name="phoneNumber" placeholder="415-123-1234" required>
+            	</div>
+            	<br>
+			  	<div>
+			  		<label for="street">Street Address: </label>
+			  		<input type="text" name="street" placeholder="Street" required>
+			  		<label for="city">City: </label>
+			  		<input type="text" name="city" placeholder="City" required>
+			  	</div>
+			  	<br>
+			  	<div>
+			  		<label for="state">State:  </label>
+			  		<input type="text" name="state" placeholder="State" required>
+					<label for="state">Zipcode: </label>
+			  		<input type="number" name="zip" placeholder="Zip" required>
+			  	</div>
+
+			<br><br><hr>
+
+            <h2>Payment Information</h2>
+            <div>
+            	<label for="state">Full Name: </label>
+            	<input type="text" name="name" placeholder="Kapil Kungwani" required>
+            	<label for="email">Email: </label>
+                <input type="email" name="email" placeholder="youremail@gmail.com" required>
+            </div>
+            <br>
+            <div>
+                <label for="card_type">Card Type: </label>
+                <select name="card_type" id="card_type" required>
+                    <option value="">--Select a Card Type</option> //when user first visits it will not be stored in server
+                    <option value="visa">Visa</option>
+                    <option value="rupay">Amex</option>
+                    <option value="mastercard">MasterCard</option>
+                </select>
+                <label for="card_number">Card Number: </label>
+                <input type="number" name="card_number" placeholder="5555-6666-7777-8888" required>
+				<label for="exp_date">Expiration Date: </label>
+                <input type="date" name="exp_date" id="exp_date" required>
+            </div>
+            <br>
+            <div>
+            	<label for="cvv">CVV: </label>
+                <input type="password" name="cvv" placeholder="123">
+                <label for="zipcode">Zipcode: </label>
+                <input type="number" name="zipcode" placeholder="94404" required>
+            </div>
+            <br><br>
+            <input type="submit" value="Submit Order">
+        </form>
+
+
+    </center>
+
+
+
+
+
+
+
+
+	</body>
+	
+	<br><br><br><br><br><br><br><br><br><br><br><br>
+	
+	<footer>
+	
+		<center><h3><b>Contact Information:</b></h3><br>
+		<table>
+			<tr>
+				<td>Alpha Diallo&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+				<td>Milton Tomasino&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+				<td>Thomas Bercasio&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+				<td>Tong Lin</td>
+			</tr>
+			
+			<tr>
+				<td>Email:</td>
+				<td>Email: mtomasino@sfsu.edu&nbsp&nbsp&nbsp</td>
+				<td>Email:</td>
+				<td>Email:</td>
+			</tr>
+		</table></center>
+	</footer>
+	
+</html>
