@@ -1,5 +1,5 @@
-Website Navigation Template
--Add paths to your pages 
+<!-- Website Navigation Template -->
+<!-- Add paths to your pages -->
 
 <nav>	
 	<table border = 1px>
