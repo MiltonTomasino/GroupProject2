@@ -15,43 +15,82 @@
 				<td><a href = "HomePage.html">Home Page</a>&nbsp&nbsp&nbsp</td>
 				<td><a href = "menu.html">Menu</a>&nbsp&nbsp&nbsp</td>
 				<td><a href = "about_us.html">About Us</a>&nbsp&nbsp&nbsp</td>
-				<td>Create Account&nbsp&nbsp&nbsp</td>
-				<td>Order Online&nbsp&nbsp&nbsp</td>
+				<td><a href = "orderonline.html">Order Online</a>&nbsp&nbsp&nbsp</td>
 				<td><a href = "faq.html">FAQ</a></td>
 			</tr>
 		</table><br>
 	
 	</center></nav>
 	
-	<body>
+	<body bgcolor = "tomato">
+	<center>
+		
 		<form>
+			
 			<fieldset>
 				<legend><b>Enter Account Information:</b></legend><br>
-				<label for = "usrName">Username:</label>
-				<input type = "text" id = "usrName" name = "usrName">
-				<label for = "email">Email:</label>
-				<input type = "email" id = "email" name = "email">
-				<label for = "email">Re-Enter Email:</label>
-				<input type = "email" id = "email" name = "email"><br><br>
-				<label for = "usrPswrd">Password:</label>
-				<input type = "password" id = "usrPswrd" name = "usrPswrd">
-				<label for = "usrPswrd">Re-Enter Password:</label>
-				<input type = "password" id = "usrPswrd" name = "usrPswrd"><br><br>
+				<table>
+					<tr>
+    						<td><label for = "usrName"><b>Username:</b></td>
+        					<td><label for = "email"><b>Email:</b></td>
+        					<td><label for = "email"><b>Re-Enter Email:</b></td>
+    					</tr>
+    
+    					<tr>
+    						<td><input type = "text" id = "usrName" name = "usrName"></td>
+        					<td><input type = "email" id = "email" name = "email"></td>
+        					<td><input type = "email" id = "email" name = "email"></td>
+        
+    					</tr>
+    
+    					<tr>
+    						<td><label for = "pswrd"><b>Password:</b></td>
+        					<td><label for = "pswrd"><b>Re-Enter Password:</b></td>
+    					</tr>
+    
+    					<tr>
+    						<td><input type = "password" id = "pswrd" name = "pswrd"></td>
+        					<td><input type = "password" id = "pswrd" name = "pswrd"></td>
+    					</tr>
+
+					</table>
 			</fieldset>
 			
 			<fieldset>
 				<legend><b>Payment Information (Optional):</b></legend><br>
-				<label for = "cardNum">Card Number:</label>
-				<input type = "text" size  = "16" id = "cardNum" name = "cardNum">
-				<label for = "date">Expiration Date:</label>
-				<input type = "date" id = "date" name = "date">
-				<label for = "code">CVV:</label>
-				<input type = "text" maxlength = "3" size = "3" id = "code" name = "code"><br><br>
-			</fieldset><br>
+				<table>
+					<tr>
+    						<td><label for = "usrName"><b>Name on Card:</b></td>
+        					<td><label for = "email"><b>Card Number</b></td>
+    					</tr>
+    
+    					<tr>
+    						<td><input type = "text" id = "name" name = "name"></td>
+        					<td><input type = "number" id = "Email" name = "Email"></td>
+        
+    					</tr>
+    
+    					<tr>
+    						<td><label for = "month"><label for = "year"><b>Expiration Date:</b></td>
+        					<td><label for = "pswrd"><b>CVV:</b></td>
+    					</tr>
+    
+    					<tr>
+    						<td><input type = "number" size = "2"id = "month" name = "month">&nbsp/
+    						<input type = "number" size = "2"id = "year" name = "year"></td>
+        					<td><input type = "number" size = "3" id = "pswrd" name = "pswrd"></td>
+    					</tr>
+
+					</table>
+				
+			</fieldset>
+			
+			<br>
 			
 			<input type = "submit" value = "Create Account">
 		
 		</form>
+	</center>
 	</body>
 	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	<footer>
