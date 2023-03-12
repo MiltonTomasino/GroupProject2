@@ -11,30 +11,87 @@
 		Order Online 
 	</title>
 </head>
-<nav>	
-	<center>
-	<font size = "6">
-	<table border = 1px>
+<nav>
+	<table align = "center">
 		<tr>
-			<td> <a href = "/var/www/html/HomePage.html"> Home </a> </td>
-			<td> <a href = "/var/www/html/faq.html"> FAQ </a> </td>
-			<td> <a href = "/var/www/html/orderonline.html"> Order </a> </td>
+			<td width=200><a href = "HomePage.html">RESTAURANT NAME</a></td>
+			<td><a href = "menu.html">Menu</a>&nbsp&nbsp&nbsp</td>
+			<td><a href = "about_us.html">About Us</a>&nbsp&nbsp&nbsp</td>
+			<td><a href = "location.html">Location</a>&nbsp&nbsp&nbsp</td>
+			<td><a href = "registration.html">Create Account</a>&nbsp&nbsp&nbsp</td>
+			<td><a href = "orderonline.html">Order Online</a>&nbsp&nbsp&nbsp</td>
+			<td><a href = "faq.html">FAQ</td>
 		</tr>
 	</table>
-	</font>
-	</center>
 </nav>
-<body bgcolor = "tomato">
+<body bgcolor = "Wheat">
 
 	<center>
-	<h1> Order Online </h1>
+	<u><h1> Order Online </h1></u>
 	<p> 
 		Place the items items you want to order here along with the number of orders of that item you want to place.
 	<p>
 	<form action = "/var/www/html/payment.html">
-		<!-- Section -->
+		<!-- Appetizers -->	
+		<h2> Appetizers </h2>
+		<table align = "center" bgcolor = "tomato" border = 5px>
+			<!-- Item 1-->
+			<td>
+				<table align = "center" bgcolor = "tomato" border = 5px>
+					<tr>
+						<th>
+							Egg Rolls
+						</th>
+						<tr> 
+							<td align = "center">
+								<img src = "/images/egg-rolls.jpeg" width = 200 height = 200> 
+							</td>
+						</tr>
+						<tr align = "center">
+							<td>
+								Price: $6.00
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for "ER_Number">Number of Orders:</label>
+								<input type="number" id = "ER_Number" name "ER_Number" min = 0>
+							</td>
+						</t>
+					</tr>
+				</table>
+			</td>
+			<!-- Item 2-->
+			<td>
+				<table align = "center" bgcolor = "tomato" border = 5px>
+					<tr>
+						<th>
+							Crab Rangoon
+						</th>
+						<tr> 
+							<td align = "center">
+								<img src = "/images/crab_rangoon.jpeg" width = 200 height = 200> 
+							</td>
+						</tr>
+						<tr align = "center">
+							<td>
+								Price: $6.50
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for "CR_Number">Number of Orders:</label>
+								<input type="number" id = "CR_Number" name "CR_Number" min = 0>
+							</td>
+						</t>
+					</tr>
+				</table>
+			</td>
+		</table>
+		
+		<!-- Dim Sum -->
 		<h2> Dim Sum </h2>
-		<table align = "center bgcolor = "orange" border = 5px>
+		<table align = "center" bgcolor = "tomato" border = 5px>
 			<!-- Item 1-->
 			<td>
 				<table align = "center" bgcolor = "tomato" border = 5px>
@@ -54,8 +111,8 @@
 						</tr>
 						<tr>
 							<td>
-								<label for="PorkBunsNumber">Number of Orders:</label>
-								<input type="number" id = "CSBNumber" name "CSBNumber" min = 0>
+								<label for "CSB_Number">Number of Orders:</label>
+								<input type="number" id = "CSB_Number" name "CSB_Number" min = 0>
 							</td>
 						</t>
 					</tr>
@@ -66,7 +123,7 @@
 				<table align = "center" bgcolor = "tomato" border = 5px>
 					<tr>
 						<th>
-							Har Gao (Shrimp Dumplings)
+							Har Gao (Shrimp Dumplings)<br>&nbsp
 						</th>
 						<tr align = "center"> 
 							<td>
@@ -80,8 +137,8 @@
 						</tr>
 						<tr>
 							<td>
-								<label for="HGNumber">Number of Orders:</label>
-								<input type="number" id = "HGNumber" name = "HGNumber" min = 0>
+								<label for="HG_Number">Number of Orders:</label>
+								<input type="number" id = "HGNumber" name = "HG_Number" min = 0>
 							</td>
 						</t>
 					</tr>
@@ -107,7 +164,7 @@
 						<tr>
 							<td>
 								<label for="SMNumber">Number of Orders:</label>
-								<input type="number" id = "SMNumber" name = "SMNumber" min = 0>
+								<input type="number" id = "SM_Number" name = "SM_Number" min = 0>
 							</td>
 						</t>
 					</tr>
@@ -132,8 +189,8 @@
 						</tr>
 						<tr>
 							<td>
-								<label for="SMNumber">Number of Orders:</label>
-								<input type="number" id = "LBGNumber" name = "LBGNumber" min = 0>
+								<label for="LBG_Number">Number of Orders:</label>
+								<input type="number" id = "LBG_Number" name = "LBG_Number" min = 0>
 							</td>
 						</t>
 					</tr>
@@ -148,7 +205,7 @@
 						</th>
 						<tr align = "center"> 
 							<td>
-								<img src = "/images/dim-sum-sticky-rice.jpeg" width = 200 height = 200> 
+								<img src = "/images/dim-sum-sticky-rice-lettuce.jpeg" width = 200 height = 200> 
 							</td>
 						</tr>
 						<tr align = "center">
@@ -158,8 +215,8 @@
 						</tr>
 						<tr>
 							<td>
-								<label for="SMNumber">Number of Orders:</label>
-								<input type="number" id = "LBGNumber" name = "LBGNumber" min = 0>
+								<label for="LBGNumber">Number of Orders:</label>
+								<input type="number" id = "LBG_Number" name = "LBG_Number" min = 0>
 							</td>
 						</t>
 					</tr>
@@ -167,117 +224,600 @@
 			</td>
 		</table>
 		
-		
+		<!-- Noodle Section -->
 		<h2> Noodles </h2>
 		<table align = "center" bgcolor = "tomato" border = 5px>
-			<tr>
-				<th>
-					Xialong Bao (Soup Dumplings)
-				</th>
-				<tr> 
-					<td>
-						<img src = https://thewoksoflife.com/wp-content/uploads/2014/08/shanghai-soup-dumpling-12.jpg" width = 200 height = 200> 
-					</td>
-				</tr>
-				<tr>
-					<td>
-						Number of Orders:
-					</td>
-				</t>
-			</tr>
+			<!-- Item 1 -->
+			<td>
+				<table align = "center" bgcolor = "tomato" border = 5px>
+					<tr>
+						<th>
+							Beef Chow Fun (Wide Rice Noodles)
+						</th>
+						<tr align = "center"> 
+							<td>
+								<img src = "/images/beef-chow-fun.jpeg" width = 200 height = 200> 
+							</td>
+						</tr>
+						<tr align = "center">
+							<td>
+								Price: 14.00
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="BeefChowFun_Number">Number of Orders:</label>
+								<input type="number" id = "BeefChowFun_Number" name = "BeefChowFun_Number" min = 0>
+							</td>
+						</t>
+					</tr>
+				</table>
+			</td>
+			<!-- Item 2 -->
+			<td>
+				<table align = "center" bgcolor = "tomato" border = 5px>
+					<tr>
+						<th>
+							Dan Dan Noodles (Spicy Sichuan Noodles)
+						</th>
+						<tr align = "center"> 
+							<td>
+								<img src = "/images/dan-dan-noodles.jpeg" width = 200 height = 200> 
+							</td>
+						</tr>
+						<tr align = "center">
+							<td>
+								Price: 14.50
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="DanDan_Number">Number of Orders:</label>
+								<input type="number" id = "DanDan_Number" name = "DanDan_Number" min = 0>
+							</td>
+						</t>
+					</tr>
+				</table>
+			</td>
+			<!-- Item 3 -->
+			<td>
+				<table align = "center" bgcolor = "tomato" border = 5px>
+					<tr>
+						<th>
+							Beef Soup with Hand Pulled Noodles
+						</th>
+						<tr align = "center"> 
+							<td>
+								<img src = "/images/hand_pulled_noodles_beef_soup.jpeg" width = 200 height = 200> 
+							</td>
+						</tr>
+						<tr align = "center">
+							<td>
+								Price: 16.50
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="BeefSoupNoodles_Number">Number of Orders:</label>
+								<input type="number" id = "BeefSoupNoodles_Number" name = "BeefSoupNoodles_Number" min = 0>
+							</td>
+						</t>
+					</tr>
+				</table>
+			</td>
+			<!-- Item 4 -->
+			<td>
+				<table align = "center" bgcolor = "tomato" border = 5px>
+					<tr>
+						<th>
+							Spicy Beef Soup with Hand Pulled Noodles
+						</th>
+						<tr align = "center"> 
+							<td>
+								<img src = "/images/beef-noodle-soup.jpeg" width = 200 height = 200> 
+							</td>
+						</tr>
+						<tr align = "center">
+							<td>
+								Price: 16.50
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="SpicyBeefSoupNoodles_Number">Number of Orders:</label>
+								<input type="number" id = "SpicyBeefSoupNoodles_Number" name = "SpicyBeefSoupNoodles_Number" min = 0>
+							</td>
+						</t>
+					</tr>
+				</table>
+			</td>
+			<!-- Item 5 -->
+			<td>
+				<table align = "center" bgcolor = "tomato" border = 5px>
+					<tr>
+						<th>
+							Singapore Style Curry Noodles
+						</th>
+						<tr align = "center"> 
+							<td>
+								<img src = "/images/singapore-noodles.jpeg" width = 200 height = 200> 
+							</td>
+						</tr>
+						<tr align = "center">
+							<td>
+								Price: 16.00
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="SingaporeNoodles_Number">Number of Orders:</label>
+								<input type="number" id = "SingaporeNoodles_Number" name = "SingaporeNoodles_Number" min = 0>
+							</td>
+						</t>
+					</tr>
+				</table>
+			</td>
+			<!-- Item 6 -->
+			<td>
+				<table align = "center" bgcolor = "tomato" border = 5px>
+					<tr>
+						<th>
+							Shrimp And Pork Wonton Soup With Hand Pulled Noodles
+						</th>
+						<tr align = "center"> 
+							<td>
+								<img src = "/images/shrimp_pork_chicken_wonton.jpeg" width = 200 height = 200> 
+							</td>
+						</tr>
+						<tr align = "center">
+							<td>
+								Price: 16.50
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="WontonNoodles_Number">Number of Orders:</label>
+								<input type="number" id = "WontonNoodles_Number" name = "WontonNoodles_Number" min = 0>
+							</td>
+						</t>
+					</tr>
+				</table>
+			</td>
 		</table>
 		
 		<h2> Beef </h2>
 		<table align = "center" bgcolor = "tomato" border = 5px>
-			<tr>
-				<th>
-					Xialong Bao (Soup Dumplings)
-				</th>
-				<tr> 
-					<td>
-						<img src = https://thewoksoflife.com/wp-content/uploads/2014/08/shanghai-soup-dumpling-12.jpg" width = 200 height = 200> 
-					</td>
-				</tr>
-				<tr>
-					<td>
-						Number of Orders:
-					</td>
-				</t>
-			</tr>
+			<!-- Item 1 -->
+			<td>
+				<table align = "center" bgcolor = "tomato" border = 5px>
+					<tr>
+						<th>
+							Beef With Broccoli
+						</th>
+						<tr align = "center"> 
+							<td>
+								<img src = "/images/beef_with_broccoli.jpeg" width = 200 height = 200> 
+							</td>
+						</tr>
+						<tr align = "center">
+							<td>
+								Price: 16.00
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="BroccoliBeef_Number">Number of Orders:</label>
+								<input type="number" id = "BroccoliBeef_Number" name = "BroccoliBeef_Number" min = 0>
+							</td>
+						</t>
+					</tr>
+				</table>
+			</td>
+			<!-- Item 2 -->
+			<td>
+				<table align = "center" bgcolor = "tomato" border = 5px>
+					<tr>
+						<th>
+							Mongolian Beef
+						</th>
+						<tr align = "center"> 
+							<td>
+								<img src = "/images/mongolian-beef.jpeg" width = 200 height = 200> 
+							</td>
+						</tr>
+						<tr align = "center">
+							<td>
+								Price: 17.00
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="MongolianBeef_Number">Number of Orders:</label>
+								<input type="number" id = "MongolianBeef_Number" name = "MongolianBeef_Number" min = 0>
+							</td>
+						</t>
+					</tr>
+				</table>
+			</td>
+			<!-- Item 3 -->
+			<td>
+				<table align = "center" bgcolor = "tomato" border = 5px>
+					<tr>
+						<th>
+							Beef and Vegetable Stir Fry
+						</th>
+						<tr align = "center"> 
+							<td>
+								<img src = "/images/beef_veg_stir_fry.jpeg" width = 200 height = 200> 
+							</td>
+						</tr>
+						<tr align = "center">
+							<td>
+								Price: 16.00
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="VegetableStirfryBeef_Number">Number of Orders:</label>
+								<input type="number" id = "VegetableStirfryBeef_Number" name = "VegetableStirfryBeef_Number" min = 0>
+							</td>
+						</t>
+					</tr>
+				</table>
+			</td>
+			<!-- Item 4 -->
+			<td>
+				<table align = "center" bgcolor = "tomato" border = 5px>
+					<tr>
+						<th>
+							Kung Pao Beef
+						</th>
+						<tr align = "center"> 
+							<td>
+								<img src = "/images/kung-pao-beef.jpeg" width = 200 height = 200> 
+							</td>
+						</tr>
+						<tr align = "center">
+							<td>
+								Price: 17.00
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="KungpaoBeef_Number">Number of Orders:</label>
+								<input type="number" id = "KungpaoBeef_Number" name = "KungpaoBeef_Number" min = 0>
+							</td>
+						</t>
+					</tr>
+				</table>
+			</td>
 		</table>
 		
-		<h2> Chicken </h2>
+		<!-- Desserts -->
+		<h2> Desserts </h2>
 		<table align = "center" bgcolor = "tomato" border = 5px>
-			<tr>
-				<th>
-					Xialong Bao (Soup Dumplings)
-				</th>
-				<tr> 
-					<td>
-						<img src = https://thewoksoflife.com/wp-content/uploads/2014/08/shanghai-soup-dumpling-12.jpg" width = 200 height = 200> 
-					</td>
-				</tr>
-				<tr>
-					<td>
-						Number of Orders:
-					</td>
-				</t>
-			</tr>
+			<!-- Item 1 -->
+			<td>
+				<table align = "center" bgcolor = "tomato" border = 5px>
+					<tr>
+						<th>
+							Egg Custard
+						</th>
+						<tr align = "center"> 
+							<td>
+								<img src = "/images/custard-tarts.jpeg" width = 200 height = 200> 
+							</td>
+						</tr>
+						<tr align = "center">
+							<td>
+								Price: 7.00
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="CustardTartDessert_Number">Number of Orders:</label>
+								<input type="number" id = "CustardTartDessert_Number" name = "CustardTartDessert_Number" min = 0>
+							</td>
+						</t>
+					</tr>
+				</table>
+			</td>
+			<!-- Item 2 -->
+			<td>
+				<table align = "center" bgcolor = "tomato" border = 5px>
+					<tr>
+						<th>
+							Red Bean Soup
+						</th>
+						<tr align = "center"> 
+							<td>
+								<img src = "/images/red-bean-soup.jpeg" width = 200 height = 200> 
+							</td>
+						</tr>
+						<tr align = "center">
+							<td>
+								Price: 7.50
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="RedBeanSoupDessert_Number">Number of Orders:</label>
+								<input type="number" id = "RedBeanSoupDessert_Number" name = "RedBeanSoupDessert_Number" min = 0>
+							</td>
+						</t>
+					</tr>
+				</table>
+			</td>
+			<!-- Item 2 -->
+			<td>
+				<table align = "center" bgcolor = "tomato" border = 5px>
+					<tr>
+						<th>
+							Jian Dui (Fried Sesame Balls)
+						</th>
+						<tr align = "center"> 
+							<td>
+								<img src = "/images/sesame-balls.jpeg" width = 200 height = 200> 
+							</td>
+						</tr>
+						<tr align = "center">
+							<td>
+								Price: 5.50
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="SesameBallsDessert_Number">Number of Orders:</label>
+								<input type="number" id = "SesameBallsDessert_Number" name = "SesameBallsDessert_Number" min = 0>
+							</td>
+						</t>
+					</tr>
+				</table>
+			</td>
+			<!-- Item 2 -->
+			<td>
+				<table align = "center" bgcolor = "tomato" border = 5px>
+					<tr>
+						<th>
+							Sweet Taro Soup
+						</th>
+						<tr align = "center"> 
+							<td>
+								<img src = "/images/taro-sago-dessert-soup.jpeg" width = 200 height = 200> 
+							</td>
+						</tr>
+						<tr align = "center">
+							<td>
+								Price: 7.50
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label for="SweetTaroSoupDessert_Number">Number of Orders:</label>
+								<input type="number" id = "SweetTaroSoupDessert_Number" name = "SweetTaroSoupDessert_Number" min = 0>
+							</td>
+						</t>
+					</tr>
+				</table>
+			</td>
 		</table>
 		
-		<h2> Seafood </h2>
-		<table align = "center" bgcolor = "tomato" border = 5px>
-			<tr>
-				<th>
-					Xialong Bao (Soup Dumplings)
-				</th>
-				<tr> 
-					<td>
-						<img src = https://thewoksoflife.com/wp-content/uploads/2014/08/shanghai-soup-dumpling-12.jpg" width = 200 height = 200> 
-					</td>
-				</tr>
-				<tr>
-					<td>
-						Number of Orders:
-					</td>
-				</t>
-			</tr>
-		</table>
-		
-		<h2> Dessert </h2>
-		<table align = "center" bgcolor = "tomato" border = 5px>
-			<tr>
-				<th>
-					Xialong Bao (Soup Dumplings)
-				</th>
-				<tr> 
-					<td>
-						<img src = https://thewoksoflife.com/wp-content/uploads/2014/08/shanghai-soup-dumpling-12.jpg" width = 200 height = 200> 
-					</td>
-				</tr>
-				<tr>
-					<td>
-						Number of Orders:
-					</td>
-				</t>
-			</tr>
-		</table>
 		<h2> Drinks </h2>
 		<table align = "center" bgcolor = "tomato" border = 5px>
+			<!-- first row -->
 			<tr>
-				<th>
-					Xialong Bao (Soup Dumplings)
-				</th>
-				<tr> 
-					<td>
-						<img src = https://thewoksoflife.com/wp-content/uploads/2014/08/shanghai-soup-dumpling-12.jpg" width = 200 height = 200> 
-					</td>
-				</tr>
-				<tr>
-					<td>
-						Number of Orders:
-					</td>
-				</t>
+				<!-- Item 1 -->
+				<td>
+					<table align = "center" bgcolor = "tomato" border = 5px>
+						<tr>
+							<th>
+								Oolong Tea
+							</th>
+							<tr align = "center"> 
+								<td>
+									<img src = "/images/oolong-tea.jpg" width = 200 height = 200> 
+								</td>
+							</tr>
+							<tr align = "center">
+								<td>
+									Price: 2.50
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label for="OolongTeaDrink_Number">Number of Orders:</label>
+									<input type="number" id = "OolongTeaDrink_Number" name = "OolongTeaDrink_Number" min = 0>
+								</td>
+							</t>
+						</tr>
+					</table>
+				</td>
+				<!-- Item 2 -->
+				<td>
+					<table align = "center" bgcolor = "tomato" border = 5px>
+						<tr>
+							<th>
+								Bubble Tea
+							</th>
+							<tr align = "center"> 
+								<td>
+									<img src = "/images/bubble-tea.jpeg" width = 200 height = 200> 
+								</td>
+							</tr>
+							<tr align = "center">
+								<td>
+									Price: 5.50
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label for="BubbleTeaDrink_Number">Number of Orders:</label>
+									<input type="number" id = "BubbleTeaDrink_Number" name = "BubbleTeaDrink_Number" min = 0>
+								</td>
+							</t>
+						</tr>
+					</table>
+				</td>
+				<!-- Item 2 -->
+				<td>
+					<table align = "center" bgcolor = "tomato" border = 5px>
+						<tr>
+							<th>
+								Coke
+							</th>
+							<tr align = "center"> 
+								<td>
+									<img src = "/images/coke-bottle.jpeg" width = 200 height = 200> 
+								</td>
+							</tr>
+							<tr align = "center">
+								<td>
+									Price: 3.00
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label for="CokeDrink_Number">Number of Orders:</label>
+									<input type="number" id = "CokeDrink_Number" name = "CokeDrink_Number" min = 0>
+								</td>
+							</t>
+						</tr>
+					</table>
+				</td>
+				<!-- Item 3 -->
+				<td>
+					<table align = "center" bgcolor = "tomato" border = 5px>
+						<tr>
+							<th>
+								Diet Coke
+							</th>
+							<tr align = "center"> 
+								<td>
+									<img src = "/images/diet-coke.jpeg" width = 200 height = 200> 
+								</td>
+							</tr>
+							<tr align = "center">
+								<td>
+									Price: 3.00
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label for="DietCokeDrink_Number">Number of Orders:</label>
+									<input type="number" id = "DietCokeDrink_Number" name = "DietCokeDrink_Number" min = 0>
+								</td>
+							</t>
+						</tr>
+					</table>
+				</td>
+				<!-- Item 4 -->
+				<td>
+					<table align = "center" bgcolor = "tomato" border = 5px>
+						<tr>
+							<th>
+								Sprite
+							</th>
+							<tr align = "center"> 
+								<td>
+									<img src = "/images/sprite-bottle.jpeg" width = 200 height = 200> 
+								</td>
+							</tr>
+							<tr align = "center">
+								<td>
+									Price: 3.00
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label for="SpriteDrink_Number">Number of Orders:</label>
+									<input type="number" id = "SpriteDrink_Number" name = "SpriteDrink_Number" min = 0>
+								</td>
+							</t>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			
+			<!-- second row -->
+			<tr>
+				<!-- Item 5 -->
+				<td>
+					<table align = "center" bgcolor = "tomato" border = 5px>
+						<tr>
+							<th>
+								Plum Juice
+							</th>
+							<tr align = "center"> 
+								<td>
+									<img src = "/images/sour-plum-drink.jpeg" width = 200 height = 200> 
+								</td>
+							</tr>
+							<tr align = "center">
+								<td>
+									Price: 3.50
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label for="PlumDrink_Number">Number of Orders:</label>
+									<input type="number" id = "PlumDrink_Number" name = "PlumDrink_Number" min = 0>
+								</td>
+							</t>
+						</tr>
+					</table>
+				</td>
+				<!-- Item 6 -->
+				<td>
+					<table align = "center" bgcolor = "tomato" border = 5px>
+						<tr>
+							<th>
+								Soy Milk
+							</th>
+							<tr align = "center"> 
+								<td>
+									<img src = "/images/soy_milk.jpeg" width = 200 height = 200> 
+								</td>
+							</tr>
+							<tr align = "center">
+								<td>
+									Price: 2.50
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label for="SoyMilkDrink_Number">Number of Orders:</label>
+									<input type="number" id = "SoyMilkDrink_Number" name = "SoyMilkDrink_Number" min = 0>
+								</td>
+							</t>
+						</tr>
+					</table>
+				</td>
+				<!-- Item 7 -->
+				<td>
+					<table align = "center" bgcolor = "tomato" border = 5px>
+						<tr>
+							<th>
+								Tsing Tao Beer
+							</th>
+							<tr align = "center"> 
+								<td>
+									<img src = "/images/tsingtaobeer.jpeg" width = 200 height = 200> 
+								</td>
+							</tr>
+							<tr align = "center">
+								<td>
+									Price: 4.50
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label for="TTBeerDrink_Number">Number of Orders:</label>
+									<input type="number" id = "TTBeerDrink_Number" name = "TTBeerDrink_Number" min = 0>
+								</td>
+							</t>
+						</tr>
+					</table>
+				</td>
 			</tr>
 		</table>
 		
@@ -296,9 +836,9 @@
 			</tr>
 			
 			<tr>
-				<td>Email:tbercasio@sfsu.edu</td>
+				<td>Email: </td>
 				<td>Email: mtomasino@sfsu.edu&nbsp&nbsp&nbsp</td>
-				<td>Email:</td>
+				<td>Email: tbercasio@sfsu.edu&nbsp&nbsp&nbsp</td>
 				<td>Email:</td>
 			</tr>
 		</table>
