@@ -60,25 +60,30 @@
 				<legend><b>Payment Information (Optional):</b></legend><br>
 				<table>
 					<tr>
+						<label for="card_type">Card Type: </label>
+                					<select name="card_type" id="card_type" required>
+                   					<option value="">--Select a Card Type</option>
+                    					<option value="visa">Visa</option>
+                    					<option value="rupay">Amex</option>
+                    					<option value="mastercard">MasterCard</option>
     						<td><label for = "usrName"><b>Name on Card:</b></td>
         					<td><label for = "email"><b>Card Number</b></td>
     					</tr>
     
     					<tr>
     						<td><input type = "text" id = "name" name = "name"></td>
-        					<td><input type = "number" id = "Email" name = "Email"></td>
+        					<td><input type = "number" id = "Email" placeholder = "XXXX-XXXX-XXXX-XXXX" name = "Email"></td>
         
     					</tr>
     
     					<tr>
-    						<td><label for = "month"><label for = "year"><b>Expiration Date:</b></td>
+    						<td><label for = "exp"><b>Expiration Date:</b></td>
         					<td><label for = "cvv"><b>CVV:</b></td>
     					</tr>
     
     					<tr>
-    						<td><input type = "number" size = "2" maxlength = "2" id = "month" name = "month">&nbsp/
-    						<input type = "number" size = "2" maxlength = "2" id = "year" name = "year"></td>
-        					<td><input type = "number" size = "3" maxlength = "3" id = "cvv" name = "cvv"></td>
+    						<td><input type = "date" id = "exp" name = "exp"></td >
+        					<td><input type = "number" size = "3" maxlength = "3" placeholder = "123" id = "cvv" name = "cvv"></td>
     					</tr>
 
 					</table>
