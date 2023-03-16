@@ -57,7 +57,7 @@
 			</fieldset>
 			
 			<fieldset>
-				<legend><b>Payment Information (Optional):</b></legend><br>
+				<legend><b>Payment & Billing Information (Optional):</b></legend><br>
 				<table>
 					<tr>
 						<label for="card_type">Card Type: </label>
@@ -67,14 +67,14 @@
                     					<option value="rupay">Amex</option>
                     					<option value="mastercard">MasterCard</option>
     						<td><label for = "usrName"><b>Name on Card:</b></td>
-        					<td><label for = "email"><b>Card Number</b></td>
+        					<td><label for = "card"><b>Card Number</b></td>
         					<td><label for = "zip"><b>ZipCode:</b></td>
     					</tr>
     
     					<tr>
     						<td><input type = "text" id = "name" name = "name"></td>
-        					<td><input type = "number" id = "Email" placeholder = "XXXX-XXXX-XXXX-XXXX" name = "Email"></td>
-        					<td><input type = "number" id = "zip" name = "zip"></td>
+        					<td><input type = "number" id = "card" placeholder = "XXXX-XXXX-XXXX-XXXX" name = "card"></td>
+        					<td><input type = "number" id = "zip" placeholder = "73923" name = "zip"></td>
         
     					</tr>
     
@@ -87,8 +87,91 @@
     						<td><input type = "date" id = "exp" name = "exp"></td >
         					<td><input type = "number" size = "3" maxlength = "3" placeholder = "123" id = "cvv" name = "cvv"></td>
     					</tr>
+    					
+    					<tr>
+    						<td><label for = "address"><b>Addresss:</b></td>
+        					<td><label for = "city"><b>City:</b></td>
+        					<td><label for = "state"><b>State:</b></td>
+        					
+        						
+    					</tr>
+    					
+    					<tr>
+    						<td><input type = "text" id = "address" name = "address"></td>
+        					<td><input type = "text" id = "city" name = "city"></td>
+        					<td><select id="state" name="state">
+								<option value=""></option>
+  								<option value="Alibama">AL</option>
+  								<option value="Alaska">AK</option>
+  								<option value="Arizona">AZ</option>
+  								<option value="Arkansas">AR</option>
+  								<option value="American Samoa">AS</option>
+  								<option value="California">CA</option>
+  								<option value="Colorado">CO</option>
+  								<option value="Conneticut">CT</option>
+  								<option value="Delaware">DE</option>
+  								<option value="District of Columbia">DC</option>
+  								<option value="Florida">FL</option>
+  								<option value="Georgia">GA</option>
+  								<option value="Guam">GU</option>
+  								<option value="Hawaii">HI</option>
+  								<option value="Idaho">ID</option>
+  								<option value="Illinois">IL</option>
+  								<option value="Indiana">IN</option>
+  								<option value="Iowa">IA</option>
+  								<option value="Kansas">KS</option>
+  								<option value="Kentucky">KY</option>
+  								<option value="Louisiana">LA</option>
+  								<option value="Maine">ME</option>
+  								<option value="Maryland">MD</option>
+  								<option value="Massachusetts">MA</option>
+  								<option value="Michigan">MI</option>
+  								<option value="Minnesota">MN</option>
+  								<option value="Mississippi">MS</option>
+  								<option value="Missouri">MO</option>
+  								<option value="Montana">MT</option>
+  								<option value="Nebraska">NE</option>
+  								<option value="Nevada">NV</option>
+  								<option value="New Hampshire">NH</option>
+  								<option value="New Jersey">NJ</option>
+  								<option value="New Mexico">NM</option>
+  								<option value="New York">NY</option>
+  								<option value="North Carolina">NC</option>
+  								<option value="North Dakota">ND</option>
+  								<option value="Northern Mariana Islands">MP</option>
+  								<option value="Ohio">Oh</option>
+  								<option value="Oklahoma">OK</option>
+  								<option value="Oregon">OR</option>
+  								<option value="Pennsylvania">PA</option>
+  								<option value="Puerto Rico">PR</option>
+  								<option value="Rhode Island">RI</option>
+  								<option value="South Carolina">SC</option>
+  								<option value="South Dakota">SD</option>
+  								<option value="Tennessee">TN</option>
+  								<option value="Texas">TX</option>
+  								<option value="Trust Territories">TT</option>
+  								<option value="Utah">UT</option>
+  								<option value="Vermont">VT</option>
+  								<option value="Virginia">VA</option>
+  								<option value="Virgin Islands">VI</option>
+  								<option value="Washington">WA</option>
+  								<option value="West Virginia">WV</option>
+  								<option value="Wisonsin">WI</option>
+  								<option value="Wyoming">WY</option>
+						</select> </td><br>
+        					
+        
+    					</tr>
+    					
+    					<tr>
+    						<td><label for = "country"><b>Country:</b></td>
+    					</tr>
+    					
+    					<tr>
+    						<td><input type = "text" id = "country" name = "country"></td>
+    					</tr>
 
-					</table>
+					</table><br><br>
 				
 			</fieldset>
 			
@@ -121,3 +204,4 @@
 		</table>
 	</center>
 	</footer>
+</html>
