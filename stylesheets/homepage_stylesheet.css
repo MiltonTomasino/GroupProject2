@@ -1,0 +1,157 @@
+.title{
+	font-family: Brush Script MT, cursive;
+	font-size: 500%;
+	color: #ff4d4d;
+	text-shadow: 0 0 3px #ffdb4d, 0 0 5px #ffdb4d;
+}
+
+.accountInfo{
+	display: flex;
+	justify-content: flex-end;
+	list-style: none;
+}
+
+.accountInfo li a{
+	border: 1px solid grey;
+	margin: 1px;
+	background-color: white;
+	font-family: Times New Roman;
+	color: black;
+	text-decoration: none;
+	padding: 5px;
+	padding-top: 20px;
+	font-size: 150%;
+}
+
+#link:hover{
+	color: #ff4d4d;
+}
+
+.navBar{
+	display: flex;
+	justify-content: center;
+	list-style: none;
+	align-content: space-between;
+}
+
+.navBar li a{
+	background-color: white;
+	font-family: Times New Roman;
+	color: black;
+	text-decoration: none;
+	padding: 15px;
+	font-size: 150%;
+	border: 1px solid grey;
+	margin: 2px;
+}
+
+
+.footer{
+	display: flex;
+	justify-content: center;
+}
+
+.footer div p{
+	font-family: Times New Roman;
+	font-size: 125%;
+}
+
+.person1{
+	background-color: whitesmoke;
+	margin-right: 0px;
+	padding: 10px;
+	border-left: 2px solid black;
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+}
+
+.person2{
+	background-color: whitesmoke;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding: 10px;
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+}
+
+.person3{
+	background-color: whitesmoke;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding: 10px;
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+}
+
+.person4{
+	background-color: whitesmoke;
+	margin-left: 0px;
+	padding: 10px;
+	border-top: 2px solid black;
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+}
+
+img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.imageContainer{
+	display: grid;
+	grid-template-areas: 'header header header'
+						 'description1 image1 ad1'
+						 'image2 description2 ad2'
+						 'image3 image3 image3';
+	gap: 15px;
+}
+
+.header{
+	grid-area: header;
+	text-align: center;
+	font-family: Brush Script MT, cursive;
+	font-size: 500%;
+	color: #ff4d4d;
+	text-shadow: 0 0 3px #ffdb4d, 0 0 5px #ffdb4d;
+}
+
+.description1{
+	grid-area: description1;
+	background-color: white;
+	border: 10px solid #ff4d4d;
+	text-align: center;
+}
+
+.description2{
+	grid-area: description2;
+	background-color: white;
+	border: 10px solid #ff4d4d;
+	text-align: center;
+}
+
+.image1{
+	grid-area: image1;
+	border: 10px solid #ff4d4d;
+}
+
+.image2{
+	grid-area: image2;	
+	border: 10px solid #ff4d4d;
+}
+
+.image3{
+	grid-area: image3;
+}
+
+.ad1{
+	grid-area: ad1;
+	max-width: 200px;
+	max-height: auto;
+}
+
+.ad2{
+	grid-area: ad2;
+	max-width: 200px;
+	max-height: auto;
+}
