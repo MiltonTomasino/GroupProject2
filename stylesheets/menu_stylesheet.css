@@ -11,8 +11,7 @@ body {
 }
 
 
-.navBar #link {
-	display: flex;
+.navBar li a {
 	background-color: white;
 	font-family: Times New Roman;
 	color: black;
@@ -25,27 +24,4 @@ body {
 
 #link:hover {
 	color: #ff4d4d;
-}
-
-
-
-
-.sub-menu {
-	display: none;
-	position: absolute;
-	text-align: left;
-	background-color: #f9f9f9;
-	min-width: 160px;
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-	padding: 12px 16px;
-	z-index: 1;
-
-}
-
-.sub-menu ul {
-	list-style: none;
-}
-
-.menu:hover .sub-menu {
-	display: flex;
 }
