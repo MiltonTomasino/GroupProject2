@@ -32,6 +32,8 @@
 	justify-content: center;
 	list-style: none;
 	align-content: space-between;
+	flex-wrap: wrap;
+	line-height: 75px;
 }
 
 .navBar li a{

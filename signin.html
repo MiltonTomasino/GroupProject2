@@ -3,6 +3,8 @@
 	<head>
 	<meta charset = "utf-8">	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel = "stylesheet" href = "stylesheets/signin_stylesheet.css">
+	<link rel = "stylesheet" href = "stylesheets/homepage_stylesheet.css">
 	<title> Sign In </title>
 	</head>
 	
@@ -18,88 +20,49 @@
 	</center>
 	</header>
 	
-	<nav><center>
-	
-		<table>
-			<tr> 
-				<td><a href = "HomePage.html">Home Page</a>&nbsp&nbsp&nbsp</td>
-				<td><a href = "menu.html">Menu</a>&nbsp&nbsp&nbsp</td>
-				<td><a href = "about_us.html">About Us</a>&nbsp&nbsp&nbsp</td>
-				<td><a href = "orderonline.html">Order Online</a>&nbsp&nbsp&nbsp</td>
-				<td><a href = "faq.html">FAQ</a></td>
-			</tr>
-		</table><br>
-	
-	</center></nav>
-	
+	<nav>
+		<ul class = "navBar">
+			<li><a id ="link" href = "HomePage.html">Home Page</a></li>
+			<li><a id ="link" href = "menu.html">Menu</a></li>
+			<li><a id ="link" href = "about_us.html">About Us</a></li>
+			<li><a id ="link" href = "orderonline.html">Order Online</a></li>
+			<li><a id ="link" href = "faq.html">FAQ</a></li>
+		</ul>
+	</nav>
+	<br>
 	<body bgcolor = "Wheat">
 	<center>
 		
 		<form action = "HomePage.html">
 			
 			<fieldset>
-				<legend><b>Sign in info:</b></legend><br>
-				<table>
-					<tr>
-    						<td><label for = "usrName"><b>Username:</b></td>
-    					</tr>
-    
-    					<tr>
-    						<td><input type = "text" id = "usrName" name = "usrName"></td>
-        
-    					</tr>
-    
-    					<tr>
-    						<td><label for = "pswrd"><b>Password:</b></td>
-    					</tr>
-    
-    					<tr>
-    						<td><input type = "password" id = "pswrd" name = "pswrd"></td>
-    					</tr>
-
-					</table> <br>
-					
-					
-					
-					<tr>Forgot Password?: <a href = "forgotpassword.html">click here</a>&nbsp&nbsp</tr><br><br>
-					<tr>Don't have an account?: <a href = "registration.html">Register now</a></tr>
-					
-
+				<legend align = center>Sign in info:</legend><br>
+				<div class = "forms">
+					<div class = "username_input">Enter Username:<br><input type = "text" id ="usrName" name = "usrName"></div>
+					<div class = "password_input">Enter Password:<br><input type = "password" id ="pswrd" name = "pswrd"></div>
+				</div>
+				<br>
+				<input type="submit" value = "Submit">
+				<br>
 			</fieldset>
-			
-		
-			
+
 			<br>
-			
-			
-      				<input type="submit" value = "Submit">
-    			
-			
-		
+			<div class = "redirects">
+				<div>Forgot Password?: <a href = "forgotpassword.html">click here</a></div>
+				<div>Don't have an account?: <a href = "registration.html">Register now</a></div>
+			</div>
+				
 		</form>
 	</center>
 	</body>
 
-	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br>
         <footer>
-	<center>
-
-                <h3><b>Contact Information:</b></h3>
-                <table>
-                        <tr>
-                                <td>Alpha Diallo&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-                                <td>Milton Tomasino&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-                                <td>Thomas Bercasio&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-                                <td>Tong Lin</td>
-                        </tr>
-
-                        <tr>
-                                <td>Email: adiallo@sfsu.edu&nbsp&nbsp&nbsp</td>
-                                <td>Email: mtomasino@sfsu.edu&nbsp&nbsp&nbsp</td>
-                                <td>Email: tbercasio@sfsu.edu&nbsp&nbsp&nbsp</td>
-                                <td>Email: tlin@sfsu.edu&nbsp&nbsp&nbsp</td>
-                        </tr>
-                </table>
-	</center>
-        </footer>
+		<div class = "footer">
+			<div class = "person1"><p>Alpha Diallo<br>Email: adiallo@sfsu.edu</p></div>
+			<div class = "person2"><p>Milton Tomasino<br>Email: mtomasino@sfsu.edu</p></div>
+			<div class = "person3"><p>Thomas Bercasio<br>Email: tbercasio@sfsu.edu</p></div>
+			<div class = "person4"><p>Tong Lin<br>Email: tlin@sfsu.edu</p></div>
+		</div>
+	</footer>
 </html>
