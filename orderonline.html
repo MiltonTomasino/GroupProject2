@@ -10,24 +10,24 @@
 	<title>
 		Order Online 
 	</title>
+	<link rel="stylesheet" href="./stylesheets/orderonline_stylesheet.css">
 </head>
-<nav>
+
+<body>
 	<center>
-		<h1> Order Online </h1>
+		<h1>Order Online</h1>
+                <!-- New Nav -->
+		<nav>
+			<ul class = "navBar">
+				<li><a id = "link" href = "HomePage.html">Home Page</a></li>
+				<li><a id = "link" href = "menu.html">Menu</a></li>
+                                <li><a id = "link" href = "about_us.html">About Us</a></li>
+                                <li><a id = "link" href = "orderonline.html">Order Online</a></li>
+                                <li><a id = "link" href = "faq.html">FAQ</a></li>
+				<li><a id = "link" href = "signin.html">Sign in</a></li>
+				<li><a id = "link" href = "registration.html">Register</a></li>
+		</nav>
 	</center>
-	<table align = "center">
-                <tr>
-                        <td><a href = "HomePage.html">Home Page</a>&nbsp&nbsp&nbsp</td>
-                        <td><a href = "menu.html">Menu</a>&nbsp&nbsp&nbsp</td>
-                        <td><a href = "about_us.html">About Us</a>&nbsp&nbsp&nbsp</td>
-                        <td><a href = "orderonline.html">Order Online</a>&nbsp&nbsp&nbsp</td>
-                        <td><a href = "faq.html">FAQ</a>&nbsp&nbsp&nbsp</td>
-                        <td><a href = "signin.html">Sign in</a>&nbsp/</td>
-			<td><a href = "registration.html">Register</a></td>
-                </tr>
-	</table>
-</nav>
-<body bgcolor = "Wheat">
 
 	<center>
 	<p> 
@@ -36,10 +36,10 @@
 	<form action = "payment.html">
 		<!-- Appetizers -->	
 		<h2> Appetizers </h2>
-		<table align = "center" bgcolor = "tomato" border = 5px>
+		<table class = "foodGroup">
 			<!-- Item 1-->
 			<td>
-				<table align = "center" bgcolor = "tomato" border = 5px>
+				<table class = "foodItem">
 					<tr>
 						<th>
 							Egg Rolls
@@ -65,7 +65,7 @@
 			</td>
 			<!-- Item 2-->
 			<td>
-				<table align = "center" bgcolor = "tomato" border = 5px>
+				<table class = "foodItem">
 					<tr>
 						<th>
 							Crab Rangoon
@@ -91,7 +91,7 @@
 			</td>
 			<!-- Item 3-->
 			<td>
-				<table align = "center" bgcolor = "tomato" border = 5px>
+				<table class ="foodItem">
 					<tr>
 						<th>
 							Spicy Wontons
@@ -117,7 +117,7 @@
 			</td>
 			<!-- Item 4-->
 			<td>
-				<table align = "center" bgcolor = "tomato" border = 5px>
+				<table class="foodItem">
 					<tr>
 						<th>
 							Lettuce Wraps
@@ -144,7 +144,7 @@
 			
 			<!-- Item 5-->
 			<td>
-				<table align = "center" bgcolor = "tomato" border = 5px>
+				<table class ="foodItem">
 					<tr>
 						<th>
 							Pork and Shrimp Potstickers
