@@ -4,6 +4,9 @@
 	<meta charset = "utf-8">	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title> Payment </title>
+	<link rel="stylesheet" href="./stylesheets/checkout.css">
+	<link rel="stylesheet" href="./stylesheets/menu_stylesheet.css">
+	<script src="https://kit.fontawesome.com/174ef0c52c.js" crossorigin="anonymous"></script>
 	</head>
 	
 	<header><center>
@@ -16,109 +19,144 @@
 	
 	</center></header>
 	
-	<nav> <center>
-	
-		<table>
-			<tr> 
-				<td><a href = "menu.html">Menu </a>&nbsp&nbsp&nbsp</td>			
-				<td><a href = "orderonline.html">Order Online</a>&nbsp&nbsp&nbsp</td>
-				<td><a href = "signin.html">Sign in</a>&nbsp/</td>
-				<td><a href = "registration.html">Register</a></td>
-			</tr>
-		</table>
-	
-	</center></nav>
-	<br>
+	<nav>
+		<ul class = "navBar">
+			<li><a id = "link" href = "menu.html">Menu</a></li>
+			<li><a id = "link" href = "orderonline.html">Order Online</a></li>
+			<li><a id = "link" href = "signin.html">Sign in</a></li>
+			<li><a id = "link" href = "registration.html">Register</a></li>
+	</nav>
 	
 	<body bgcolor = "Wheat">
-	<center>
-		<h2>Items in your cart</h2>
-		<table border=3px>
-			<tr>
-				<th>item</th>
-		    	<th>quantity</th>
-		    	<th>price</th>
-		  	</tr>
-		  	<tr>
-		    	<td>Xialong Bao (Soup Dumplings)</td>
-		    	<td>x1</td>
-		    	<td>$10.00</td>
-		  	</tr>
-		  	<tr>
-		    	<td>Har Gao (Soup Dumplings)</td>
-		    	<td>x2</td>
-		    	<td>$18.00</td>
-		  	</tr>
-		</table>
-		<p>Total Price: <strong>$46.00</strong></p>
-	
-		<hr>
-        <form action=""> 
-            <h2>Delivery Address</h2>
-            	<div>
-            		<label for="name">First Name: </label>
-            		<input type="text" name="fname" placeholder="Kapil Kungwani" required>
-            		<label for="name">Last Name: </label>
-            		<input type="text" name="lname" placeholder="Kapil Kungwani" required>
-            		<label for = "phoneNumber">Phone Number: </label>
-            		<input type="number" name="phoneNumber" placeholder="415-123-1234" required>
-            	</div>
-            	<br>
-			  	<div>
-			  		<label for="street">Street Address: </label>
-			  		<input type="text" name="street" placeholder="Street" required>
-			  		<label for="city">City: </label>
-			  		<input type="text" name="city" placeholder="City" required>
-			  	</div>
-			  	<br>
-			  	<div>
-			  		<label for="state">State:  </label>
-			  		<input type="text" name="state" placeholder="State" required>
-					<label for="state">Zipcode: </label>
-			  		<input type="number" name="zip" placeholder="Zip" required>
-			  	</div>
-
-			<br><br><hr>
-
-            <h2>Payment Information</h2>
-            <div>
-            	<label for="state">Full Name: </label>
-            	<input type="text" name="name" placeholder="Kapil Kungwani" required>
-            	<label for="email">Email: </label>
-                <input type="email" name="email" placeholder="youremail@gmail.com" required>
-            </div>
-            <br>
-            <div>
-                <label for="card_type">Card Type: </label>
-                <select name="card_type" id="card_type" required>
-                    <option value="">--Select a Card Type</option> //when user first visits it will not be stored in server
-                    <option value="visa">Visa</option>
-                    <option value="rupay">Amex</option>
-                    <option value="mastercard">MasterCard</option>
-                </select>
-                <label for="card_number">Card Number: </label>
-                <input type="number" name="card_number" placeholder="5555-6666-7777-8888" required>
-				<label for="exp_date">Expiration Date: </label>
-                <input type="date" name="exp_date" id="exp_date" required>
-            </div>
-            <br>
-            <div>
-            	<label for="cvv">CVV: </label>
-                <input type="password" name="cvv" placeholder="123">
-                <label for="zipcode">Zipcode: </label>
-                <input type="number" name="zipcode" placeholder="94404" required>
-            </div>
-            <br><br>
-            <!--<input type="submit" >//-->
-        </form>
-        	<button><a href="orderplaced.html" >Submit Order</a></button>
-
-    </center>
-
-
-
-
-
+		<div class="row">
+			<div class="col-75">
+			  <div class="container">
+				<form action="" id="survey" method="post" target="_blank">
+				  <div class="row">
+					<div class="col-50">
+					  <h2>Billing Address</h2>
+					  <label for="fname">*First name:</label>
+					  <input type="text" id="fname" name="fname" placeholder="John" required>
+					  <label for="lname">*Last name:</label>
+					  <input type="text" id="lname" name="lname" placeholder="Smith" required>
+					  <label for="phone">Phone Number:</label>
+					  <input type="tel" id="phone" name="phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+					  <label for="email">*Email Address:</label>
+					  <input type="email" id="email" name="email" placeholder="johnsmith@gmail.com" required><br><br>
+					  <label for="street1">*Street Address 1:</label>
+					  <input type="text" id="street1" name="street1" required placeholder="515 Lombard St">
+					  <label for="street2">Street Address 2:</label>
+					  <input type="text" id="street2" name="street2" placeholder="Apt,suite,unit,etc.">
+					  <label for="city">*City:</label>
+					  <input type="text" id="city" name="city" required placeholder="San Francisco">
+					  
+					  <div class="row">
+						<div class="col-50">
+						  <label for="state">*State:</label>
+						  <select name="state" id="state" required>
+							<option value="AL">AL</option>
+							<option value="AK">AK</option>
+							<option value="AZ">AZ</option>
+							<option value="AR">AR</option>
+							<option value="CA">CA</option>
+							<option value="CO">CO</option>
+							<option value="CT">CT</option>
+							<option value="DE">DE</option>
+							<option value="FL">FL</option>
+							<option value="GA">GA</option>
+							<option value="HI">HI</option>
+							<option value="ID">ID</option>
+							<option value="IL">IL</option>
+							<option value="IN">IN</option>
+							<option value="IA">IA</option>
+							<option value="KS">KS</option>
+							<option value="KY">KY</option>
+							<option value="LA">LA</option>
+							<option value="ME">ME</option>
+							<option value="MD">MD</option>
+							<option value="MA">MA</option>
+							<option value="MI">MI</option>
+							<option value="MN">MN</option>
+							<option value="MS">MS</option>
+							<option value="MO">MO</option>
+							<option value="MT">MT</option>
+							<option value="NE">NE</option>
+							<option value="NV">NV</option>
+							<option value="NH">NH</option>
+							<option value="NJ">NJ</option>
+							<option value="NM">NM</option>
+							<option value="NY">NY</option>
+							<option value="NC">NC</option>
+							<option value="ND">ND</option>
+							<option value="OH">OH</option>
+							<option value="OK">OH</option>
+							<option value="OR">OR</option>
+							<option value="PA">PA</option>
+							<option value="RI">RI</option>
+							<option value="SC">SC</option>
+							<option value="SD">SD</option>
+							<option value="TN">TN</option>
+							<option value="TX">TX</option>
+							<option value="UT">UT</option>
+							<option value="VT">VT</option>
+							<option value="VA">VA</option>
+							<option value="WA">WA</option>
+							<option value="WV">WV</option>
+							<option value="WI">WI</option>
+							<option value="WY">WY</option>
+						  </select>
+						</div>
+						<div class="col-50">
+						  <label for="zip">*Zip Code:</label>
+						  <input type="text" id="zip" name="zip" placeholder="98735" pattern="[0-9]{5}" required>
+						</div>
+					  </div>
+				  </div>
+				  <div class="col-50">
+					<h2>Payment</h2>
+					<h3>Accepted Cards</h3>
+					<i class="fa-brands fa-cc-visa fa-2xl" style="color:black"></i>
+					<i class="fa-brands-discover fa-2xl" style="color:black"></i>
+					<i class="fa-brands fa-cc-mastercard fa-2xl" style="color:black"></i>
+					<i class="fa-brands fa-cc-apple-pay fa-2xl" style="color:black"></i>
+					<i class="fa-brands fa-cc-paypal fa-2xl" style="color:black"></i>
+				  
+					<br><br>
+					<label for="name">*Name on Card:</label>
+					<input type="text" id="name" name="name" placeholder="John Smith" required>
+					<label for="ccnum">*Credit card number</label>
+					<input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" required>
+					<div class="row">
+					  <div class="col-50">
+						<label for="exp">*Expiration Date</label>
+						<input type="month" id="exp" name="exp" required>
+					  </div>
+					  <div class="col-50">
+						<label for="cvv">*CVV</label>
+						<input type="text" id="cvv" name="cvv" placeholder="123" required pattern="[0-9]{3-4}">
+					  </div>
+					</div>
+				  </div>
+				</div>
+				<label style="margin-bottom: 15px;">
+				  <input type="checkbox" checked="checked" name="sameAddress">Shipping address same as billing
+				</label>
+				<a href="orderplaced.html" class="btn">Continue to checkout</a>
+		  </form>
+		  </div>
+		  </div>
+		  <div class="col-25">
+			 <div class="container">
+			   <h2>Cart</h2>
+			   <p>2 x Egg Rolls<span class="price">$16.00</span></p>
+			   <p>1 x Spicy Beef Noodle Soup<span class="price">$16.50</span></p>
+			   <hr>
+			   <p>Tax <span class="price">$3.20</span></p>
+			   <p>Delivery Fee <span class="price">$5.00</span></p>
+			   <p>Total <span class="price" style="color:black"><b>$40.70</b></span></p>
+			</div>
+			</div>
+		  </div>
 
 
 
