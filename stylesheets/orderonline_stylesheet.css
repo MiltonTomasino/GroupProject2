@@ -1,0 +1,37 @@
+body {
+	background-color: wheat;
+}
+
+.navBar {
+	display: flex;
+	justify-content: center;
+	list-style: none;
+	align-content: space-between;
+	margin-bottom: 20px;
+}
+
+.foodGroup{
+	display: flexbox;
+	justify-content: center;
+	background-color: tomato;
+}
+
+.foodItem{
+	display: flexbox;
+	justify-content:center:
+}
+
+.navBar li a {
+	background-color: white;
+	font-family: Times New Roman;
+	color: black;
+	text-decoration: none;
+	padding: 15px;
+	font-size: 150%;
+	border: 1px solid grey;
+	margin: 2px;
+}
+
+#link:hover {
+	color: #ff4d4d;
+}
