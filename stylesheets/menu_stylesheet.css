@@ -11,7 +11,8 @@ body {
 }
 
 
-.navBar li a {
+.navBar #link {
+	display: flex;
 	background-color: white;
 	font-family: Times New Roman;
 	color: black;
@@ -25,3 +26,36 @@ body {
 #link:hover {
 	color: #ff4d4d;
 }
+
+
+/* Submenu Content (Hidden by Default) */
+.sub-menu {
+	display: none;
+	position: absolute;
+	text-align: left;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+/* Links inside the submenu */
+.sub-menu a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+/* Change color when hovering over submenu links */
+#menu-link:hover {
+	background-color: #f1f1f1;
+	color: #ff4d4d;
+}
+
+
+/* Show the submenu on hover */
+.menu:hover .sub-menu {
+	display: block;
+}
+
