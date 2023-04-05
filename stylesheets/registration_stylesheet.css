@@ -1,0 +1,194 @@
+.accountForms{
+	display: grid;
+	grid-template-columns: 250px 250px 250px;
+	grid-template-rows: auto auto;
+	justify-content: center;
+}
+
+legend{
+	font-weight: bold;
+}
+
+.username_input{
+	text-align: left;
+	font-size: 110%;
+	font-weight: bold;
+	padding: 10px;
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+	background-color: ghostwhite;
+}
+
+.Enter_userEmail{
+	text-align: left;
+	font-size: 110%;
+	font-weight: bold;
+	padding: 10px;
+	border-top: 1px solid black;
+	background-color: ghostwhite;
+	padding-bottom: 15px;
+}
+
+.ReEnter_userEmail{
+	text-align: left;
+	font-size: 110%;
+	font-weight: bold;
+	padding: 10px;
+	border-top: 1px solid black;
+	border-right: 1px solid black;
+	background-color: ghostwhite;
+	padding-bottom: 15px;
+}
+
+.Enter_password{
+	text-align: left;
+	font-size: 110%;
+	font-weight: bold;
+	padding: 10px;
+	border-left: 1px solid black;
+	border-bottom: 1px solid black;
+	background-color: ghostwhite;
+	padding-bottom: 15px;
+}
+
+.ReEnter_password{
+	text-align: left;
+	font-size: 110%;
+	font-weight: bold;
+	padding: 10px;
+	border-bottom: 1px solid black;
+	background-color: ghostwhite;
+	padding-bottom: 15px;
+}
+
+.emptySpace{
+	background-color: ghostwhite;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+.paymentForms{
+	display: grid;
+	grid-template-columns: 250px 250px 250px;
+	grid-template-rows: auto auto auto auto;
+	justify-content: center;
+}
+
+.cardType{
+	font-weight: bold;
+	grid-column-start: 2;
+	grid-column-end: 3;
+	align-content: center;
+	padding: 10px;
+}
+
+.cardName{
+	grid-column-start: 1;
+	grid-column-end: 2;
+	text-align: left;
+	font-size: 110%;
+	font-weight: bold;
+	padding: 10px;
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+	background-color: ghostwhite;
+	padding-bottom: 15px;
+}
+
+.cardNumber{
+	text-align: left;
+	font-size: 110%;
+	font-weight: bold;
+	padding: 10px;
+	border-top: 1px solid black;
+	background-color: ghostwhite;
+	padding-bottom: 15px;
+}
+
+.zipCode{
+	text-align: left;
+	font-size: 110%;
+	font-weight: bold;
+	padding: 10px;
+	border-top: 1px solid black;
+	border-right: 1px solid black;
+	background-color: ghostwhite;
+	padding-bottom: 15px;
+}
+
+.expirDate{
+	text-align: left;
+	font-size: 110%;
+	font-weight: bold;
+	padding: 10px;
+	border-left: 1px solid black;
+	background-color: ghostwhite;
+	padding-bottom: 15px;
+}
+
+.cvvCode{
+	text-align: left;
+	font-size: 110%;
+	font-weight: bold;
+	padding: 10px;
+	background-color: ghostwhite;
+	padding-bottom: 15px;
+}
+
+.address{
+	grid-column-start: 1;
+	grid-column-end: 2;
+	text-align: left;
+	font-size: 110%;
+	font-weight: bold;
+	padding: 10px;
+	border-left: 1px solid black;
+	background-color: ghostwhite;
+	padding-bottom: 15px;
+}
+
+.city{
+	text-align: left;
+	font-size: 110%;
+	font-weight: bold;
+	padding: 10px;
+	background-color: ghostwhite;
+	padding-bottom: 15px;
+}
+
+.state{
+	text-align: left;
+	font-size: 110%;
+	font-weight: bold;
+	padding: 10px;
+	border-right: 1px solid black;
+	background-color: ghostwhite;
+	padding-bottom: 15px;
+}
+
+.country{
+	text-align: left;
+	font-size: 110%;
+	font-weight: bold;
+	padding: 10px;
+	border-left: 1px solid black;
+	border-bottom: 1px solid black;
+	background-color: ghostwhite;
+	padding-bottom: 15px;
+}
+
+.emptySpace1{
+	border-right: 1px solid black;
+	background-color: ghostwhite;
+}
+
+.emptySpace2{
+	border-bottom: 1px solid black;
+	background-color: ghostwhite;
+}
+
+.emptySpace3{
+	border-bottom: 1px solid black;
+	border-right: 1px solid black;
+	background-color: ghostwhite;
+}

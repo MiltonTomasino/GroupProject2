@@ -3,24 +3,22 @@
 	<head>
 	<meta charset = "utf-8">	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel = "stylesheet" href = "stylesheets/homepage_stylesheet.css">
+	<link rel = "stylesheet" href = "stylesheets/registration_stylesheet.css">
 	<title> Register Account </title>
 	</head>
 	
 	<header><center><h1>Registration</h1></center></header>
 	
-	<nav><center>
-	
-		<table>
-			<tr> 
-				<td><a href = "HomePage.html">Home Page</a>&nbsp&nbsp&nbsp</td>
-				<td><a href = "menu.html">Menu</a>&nbsp&nbsp&nbsp</td>
-				<td><a href = "about_us.html">About Us</a>&nbsp&nbsp&nbsp</td>
-				<td><a href = "orderonline.html">Order Online</a>&nbsp&nbsp&nbsp</td>
-				<td><a href = "faq.html">FAQ</a></td>
-			</tr>
-		</table><br>
-	
-	</center></nav>
+	<nav>
+		<ul class = "navBar">
+			<li><a id ="link" href = "menu.html">Menu</a></li>
+			<li><a id ="link" href = "about_us.html">About Us</a></li>
+			<li><a id ="link" href = "orderonline.html">Order Online</a></li>
+			<li><a id ="link" href = "faq.html">FAQ</a></li>
+		</ul>
+	</nav>
+	<br>
 	
 	<body bgcolor = "Wheat">
 	<center>
@@ -28,78 +26,37 @@
 		<form action = "HomePage.html">
 			
 			<fieldset>
-				<legend><b>Enter Account Information:</b></legend><br>
-				<table>
-					<tr>
-    						<td><label for = "usrName"><b>Username:</b></td>
-        					<td><label for = "email"><b>Email:</b></td>
-        					<td><label for = "email"><b>Re-Enter Email:</b></td>
-    					</tr>
-    
-    					<tr>
-    						<td><input type = "text" id = "usrName" name = "usrName"></td>
-        					<td><input type = "email" id = "email" name = "email"></td>
-        					<td><input type = "email" id = "email" name = "email"></td>
-        
-    					</tr>
-    
-    					<tr>
-    						<td><label for = "pswrd"><b>Password:</b></td>
-        					<td><label for = "pswrd"><b>Re-Enter Password:</b></td>
-    					</tr>
-    
-    					<tr>
-    						<td><input type = "password" id = "pswrd" name = "pswrd"></td>
-        					<td><input type = "password" id = "pswrd" name = "pswrd"></td>
-    					</tr>
-
-					</table>
+				<legend align = center>Enter Account Information:</legend><br>
+				<div class = "accountForms">
+					<div class = "username_input">Enter Username:<br><input type = "text" id ="usrName" name = "usrName"></div>
+					<div class = "Enter_userEmail">Enter Email:<br><input type = "email" id ="Email" name = "Email"></div>
+					<div class = "ReEnter_userEmail">Re-Enter Email:<br><input type = "email" id ="Email" name = "Email"></div>
+					<div class = "Enter_password">Enter Password:<br><input type = "password" id ="pswrd" name = "pswrd"></div>
+					<div class = "ReEnter_password">Re-Enter Password:<br><input type = "password" id ="pswrd" name = "pswrd"></div>
+					<div class = "emptySpace"></div>
+				</div>
+				<br>
+				
 			</fieldset>
 			
 			<fieldset>
-				<legend><b>Payment & Billing Information (Optional):</b></legend><br>
-				<table>
-					<tr>
-						<label for="card_type">Card Type: </label>
+				<legend align = center>Payment & Billing Information (Optional):</legend><br>
+				<div class = "paymentForms">
+					<div class = "cardType">Card Type:
                 					<select name="card_type" id="card_type">
-                   					<option value="">--Select a Card Type</option>
+                   						<option value="">--Select a Card Type</option>
                     					<option value="visa">Visa</option>
                     					<option value="rupay">Amex</option>
-                    					<option value="mastercard">MasterCard</option>
-    						<td><label for = "usrName"><b>Name on Card:</b></td>
-        					<td><label for = "card"><b>Card Number</b></td>
-        					<td><label for = "zip"><b>ZipCode:</b></td>
-    					</tr>
-    
-    					<tr>
-    						<td><input type = "text" id = "name" name = "name"></td>
-        					<td><input type = "number" id = "card" placeholder = "XXXX-XXXX-XXXX-XXXX" name = "card"></td>
-        					<td><input type = "number" id = "zip" placeholder = "73923" name = "zip"></td>
-        
-    					</tr>
-    
-    					<tr>
-    						<td><label for = "exp"><b>Expiration Date:</b></td>
-        					<td><label for = "cvv"><b>CVV:</b></td>
-    					</tr>
-    
-    					<tr>
-    						<td><input type = "date" id = "exp" name = "exp"></td >
-        					<td><input type = "number" size = "3" maxlength = "3" placeholder = "123" id = "cvv" name = "cvv"></td>
-    					</tr>
-    					
-    					<tr>
-    						<td><label for = "address"><b>Addresss:</b></td>
-        					<td><label for = "city"><b>City:</b></td>
-        					<td><label for = "state"><b>State:</b></td>
-        					
-        						
-    					</tr>
-    					
-    					<tr>
-    						<td><input type = "text" id = "address" name = "address"></td>
-        					<td><input type = "text" id = "city" name = "city"></td>
-        					<td><select id="state" name="state">
+                    					<option value="mastercard">MasterCard</option></select></div>
+					<div class = "cardName">Name on Card:<br><input type = "text" id ="card_Name" name = "card_Name"></div>
+					<div class = "cardNumber">Card Number:<br><input type = "number" placeholder = "XXXX-XXXX-XXXX-XXXX" id ="card_number" name = "card_number"></div>
+					<div class = "zipCode">Zip Code:<br><input type = "number" placeholder = "73923" id ="zip_code" name = "zip_code"></div>
+					<div class = "expirDate">Expiration Date:<br><input type = "date" id ="expir_date" name = "expir_date"></div>
+					<div class = "cvvCode">CVV:<br><input type = "number" size = "3" maxlength = "3" placeholder = "123" id = "cvv_code" name = "cvv_code"></div>
+					<div class = "emptySpace1"></div>
+					<div class = "address">Address:<br><input type = "text" id = "address" name = "address"></div>
+					<div class = "city">City:<br><input type = "text" id = "usrCity" name = "usrCity"></div>
+					<div class = "state">State:<br><select id="state" name="state">
 								<option value=""></option>
   								<option value="Alibama">AL</option>
   								<option value="Alaska">AK</option>
@@ -157,21 +114,12 @@
   								<option value="Washington">WA</option>
   								<option value="West Virginia">WV</option>
   								<option value="Wisonsin">WI</option>
-  								<option value="Wyoming">WY</option>
-						</select> </td><br>
-        					
-        
-    					</tr>
-    					
-    					<tr>
-    						<td><label for = "country"><b>Country:</b></td>
-    					</tr>
-    					
-    					<tr>
-    						<td><input type = "text" id = "country" name = "country"></td>
-    					</tr>
-
-					</table><br><br>
+  								<option value="Wyoming">WY</option></select></div>
+  					<div class = "country">Country:<br><input type = "text" id = "usrCountry" name = "usrCountry"></div>
+  					<div class = "emptySpace2"></div>
+  					<div class = "emptySpace3"></div>
+				</div>
+				<br>
 				
 			</fieldset>
 			
@@ -181,27 +129,15 @@
 		
 		</form>
 	</center>
+
 	</body>
 	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	<footer>
-	<center>
-	
-		<h3><b>Contact Information:</b></h3>
-		<table>
-			<tr>
-				<td>Alpha Diallo&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-				<td>Milton Tomasino&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-				<td>Thomas Bercasio&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-				<td>Tong Lin</td>
-			</tr>
-			
-			<tr>
-				<td>Email: adiallo@sfsu.edu&nbsp&nbsp&nbsp</td>
-				<td>Email: mtomasino@sfsu.edu&nbsp&nbsp&nbsp</td>
-				<td>Email: tbercasio@sfsu.edu&nbsp&nbsp&nbsp</td>
-				<td>Email: tlin@sfsu.edu&nbsp&nbsp&nbsp</td>
-			</tr>
-		</table>
-	</center>
+		<div class = "footer">
+			<div class = "person1"><p>Alpha Diallo<br>Email: adiallo@sfsu.edu</p></div>
+			<div class = "person2"><p>Milton Tomasino<br>Email: mtomasino@sfsu.edu</p></div>
+			<div class = "person3"><p>Thomas Bercasio<br>Email: tbercasio@sfsu.edu</p></div>
+			<div class = "person4"><p>Tong Lin<br>Email: tlin@sfsu.edu</p></div>
+		</div>
 	</footer>
 </html>
