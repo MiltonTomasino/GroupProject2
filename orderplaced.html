@@ -4,6 +4,9 @@
 	<meta charset = "utf-8">	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title> Order Placed </title>
+	<link rel="stylesheet" href="./stylesheets/checkout.css">
+	<script src="https://kit.fontawesome.com/174ef0c52c.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="./stylesheets/menu_stylesheet.css">
 	</head>
 	
 	<header><center>
@@ -16,43 +19,33 @@
 	
 	</center></header>
 	
-	<nav> <center>
-	
-		<table>
-			<tr> 
-				<td><a href = "HomePage.html">Home Page</a>&nbsp&nbsp&nbsp</td>
-				<td><a href = "menu.html">Menu </a>&nbsp&nbsp&nbsp</td>
-				<td><a href = "about_us.html">About Us</a>&nbsp&nbsp&nbsp</td>				
-				<td><a href = "orderonline.html">Order Online</a>&nbsp&nbsp&nbsp</td>
-				<td><a href = "faq.html">FAQ</a>&nbsp&nbsp&nbsp</td>
-				<td><a href = "signin.html">Sign in</a>&nbsp/</td>
-				<td><a href = "registration.html">Register</a></td>
-			</tr>
-		</table>
-	
-	</center></nav>
+	<nav>
+		<ul class = "navBar">
+			<li><a id = "link" href = "HomePage.html">Home Page</a></li>
+			<li><a id = "link" href = "menu.html">Menu</a></li>
+			<li><a id = "link" href = "about_us.html">About Us</a></li>
+			<li><a id = "link" href = "orderonline.html">Order Online</a></li>
+			<li><a id = "link" href = "faq.html">FAQ</a></li>
+			<li><a id = "link" href = "signin.html">Sign in</a></li>
+			<li><a id = "link" href = "registration.html">Register</a></li>
+	</nav>
 	<br>
 	
 	<body bgcolor = "Wheat">
 	<center>
 		<h2>Your order have been placed!</h2>
-		<table border=3px>
-			<tr>
-				<th>item</th>
-		    	<th>quantity</th>
-		    	<th>price</th>
-		  	</tr>
-		  	<tr>
-		    	<td>Xialong Bao (Soup Dumplings)</td>
-		    	<td>x1</td>
-		    	<td>$10.00</td>
-		  	</tr>
-		  	<tr>
-		    	<td>Har Gao (Soup Dumplings)</td>
-		    	<td>x2</td>
-		    	<td>$18.00</td>
-		  	</tr>
-		</table>
+
+		<div class="container" id="receipt">
+			  <h2>Cart</h2>
+			  <p>2 x Egg Rolls<span class="price">$16.00</span></p>
+			  <p>1 x Spicy Beef Noodle Soup<span class="price">$16.50</span></p>
+			  <hr>
+			  <p>Tax <span class="price">$3.20</span></p>
+			  <p>Delivery Fee <span class="price">$5.00</span></p>
+			  <p>Total <span class="price" style="color:black"><b>$40.70</b></span></p>
+		   </div>
+		</div>
+
 		
 
 		<p>Delivery address: <strong>1600 Holloway Ave, San Francisco, CA 94132</strong><br><br>
