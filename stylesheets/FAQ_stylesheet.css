@@ -1,6 +1,6 @@
 .pageTitle{
 	font-family: Brush Script MT, cursive;
-	font-size: 500%;
+	font-size: 400%;
 	color: #ff4d4d;
 	text-shadow: 0 0 3px #ffdb4d, 0 0 5px #ffdb4d;
 }
@@ -10,6 +10,7 @@ header{
 	background-image:url("https://www.thebeijinger.com/sites/default/files/thebeijinger/blog-images/314889/nwh-1-10.jpg");
 	background-repeat: no-repeat;
 	background-position-x: center;
+	background-position-y: top;
 	background-size:cover;
 	height: 600px;
 }
