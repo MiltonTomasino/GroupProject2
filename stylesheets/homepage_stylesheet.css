@@ -33,7 +33,7 @@
 	list-style: none;
 	align-content: space-between;
 	flex-wrap: wrap;
-	line-height: 75px;
+	
 }
 
 .navBar li a{
@@ -94,7 +94,7 @@
 	border-bottom: 2px solid black;
 }
 
-img{
+.imageContainer img{
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
@@ -121,25 +121,34 @@ img{
 .description1{
 	grid-area: description1;
 	background-color: white;
-	border: 10px solid #ff4d4d;
+	border: 5px solid #ff4d4d;
 	text-align: center;
+	font-size: 200%;
+	padding-top: 150px;
+	padding-bottom: 150px;
+	margin: auto;
 }
+
 
 .description2{
 	grid-area: description2;
 	background-color: white;
-	border: 10px solid #ff4d4d;
+	border: 5px solid #ff4d4d;
 	text-align: center;
+	font-size: 200%;
+	padding-top: 150px;
+	padding-bottom: 150px;
+	margin: auto;
 }
 
 .image1{
 	grid-area: image1;
-	border: 10px solid #ff4d4d;
+	border: 5px solid #ff4d4d;
 }
 
 .image2{
 	grid-area: image2;	
-	border: 10px solid #ff4d4d;
+	border: 5px solid #ff4d4d;
 }
 
 .image3{
@@ -156,4 +165,34 @@ img{
 	grid-area: ad2;
 	max-width: 200px;
 	max-height: auto;
+}
+
+.sub-menu {
+	display: none;
+	position: absolute;
+	text-align: left;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+/* Links inside the submenu */
+.sub-menu a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+/* Change color when hovering over submenu links */
+#menu-link:hover {
+	background-color: #f1f1f1;
+	color: #ff4d4d;
+}
+
+
+/* Show the submenu on hover */
+.menu:hover .sub-menu {
+	display: block;
 }
