@@ -6,6 +6,12 @@
 }
 
 /* Necessary Styling for Navigation and Header*/
+header{
+	background-image:url("https://www.thebeijinger.com/sites/default/files/thebeijinger/blog-images/314889/nwh-1-10.jpg");
+	background-repeat: no-repeat;
+	background-position-x: center;
+	background-size:cover;
+}
 .accountInfo{
 	display: flex;
 	justify-content: flex-end;
@@ -42,8 +48,7 @@
 }
 /* Styling Main Content Of Page*/
 body {
-	background-color: wheat;
-	
+	background-color: wheat;	
 }
 
 h2 {
