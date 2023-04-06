@@ -2,6 +2,13 @@ body {
 	background-color: wheat;
 }
 
+.title{
+	font-family: Brush Script MT, cursive;
+	font-size: 500%;
+	color: #ff4d4d;
+	text-shadow: 0 0 3px #ffdb4d, 0 0 5px #ffdb4d;
+}
+
 .navBar {
 	display: flex;
 	justify-content: center;
@@ -77,6 +84,13 @@ body {
 .product_page th {
   background-color: tomato;
   color: white;
+}
+
+.foodTitle{
+	font-family: Brush Script MT, cursive;
+	font-size: 300%;
+	color: #ff4d4d;
+	text-shadow: 0 0 3px #ffdb4d, 0 0 5px #ffdb4d;
 }
 
 /* Copied from Milton who designed footer */
