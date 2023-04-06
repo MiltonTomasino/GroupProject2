@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<title>Dim Sum Menu</title>
 		<!-- Including the stylesheet -->
-		<link rel="stylesheet" href="../stylesheets/menu_stylesheet.css">
+		<link rel="stylesheet" href="../stylesheets/product_stylesheet.css">
 	</head>
 	<body>
 		<center>
@@ -31,166 +31,82 @@
 				<li><a id = "link" href = "../registration.html">Register</a></li>
 		</nav>
 
-
 		<h2> Dim Sum </h2>
-		<table align = "center" bgcolor = "tomato" border = 5px height="100%">
-		<!-- Item 1-->
-			<td>
-				<table bgcolor = "tomato" border = 5px height="100%">
-					<tr>
-						<th>
-							Char Siu Bao (Steamed BBQ Pork Buns)
-						</th>
-						<tr> 
-							<td align = "center">
-								<img src = "../images/steamed-bbq-pork-buns.jpeg" width = 200 height = 200> 
-							</td>
-						</tr>
-						<tr align = "center">
-							<td>
-								Price: $8.00
-							</td>
-						</tr>
-						<tr>
-							<td align = "center"><font size="-1">
-								Soft and fluffy steamed buns filled with savory and sweet barbecued pork. 
-								Our char siu bao is a popular dim sum item that's perfect for any time of day.
-							</font></td>
-						</tr>
-					</tr>
-				</table>
-			</td>
-			<!-- Item 2-->
-			<td>
-				<table align = "center" bgcolor = "tomato" border = 5px height="100%">
-					<tr>
-						<th>
-							Har Gao (Shrimp Dumplings)
-						</th>
-						<tr align = "center"> 
-							<td>
-								<img src = "../images/har_gow.jpg" width = 200 height = 200> 
-							</td>
-						</tr>
-						<tr align = "center">
-							<td>
-								Price: $9.00
-							</td>
-						</tr>
-						<tr>
-							<td align = "center"><font size="-1">
-								These translucent steamed shrimp dumplings are a classic dim 
-								sum dish that never goes out of style. Our har gao is made with 
-								fresh, succulent shrimp and wrapped in a thin, delicate wrapper.
-							</font></td>
-						</tr>
-					</tr>
-				</table>
-			</td>
-			<!-- Item 3 -->
-			<td>
-				<table align = "center" bgcolor = "tomato" border = 5px height="100%">
-					<tr>
-						<th>
-							Siu Mai (Shrimp and Pork Dumplings)
-						</th>
-						<tr align = "center"> 
-							<td>
-								<img src = "../images/shumai.jpeg" width = 200 height = 200> 
-							</td>
-						</tr>
-						<tr align = "center">
-							<td>
-								Price: $8.50
-							</td>
-						</tr>
-						<tr>
-							<td align = "center"><font size="-1">
-								These bite-sized steamed pork and shrimp dumplings are a 
-								must-try dim sum item. Our siu mai is made with high-quality 
-								ground pork and juicy shrimp, wrapped in a thin, tender wrapper.
-							</font></td>
-						</tr>
-					</tr>
-				</table>
-			</td>
-			<!-- Item 4 -->
-			<td>
-				<table align = "center" bgcolor = "tomato" border = 5px height="100%">
-					<tr>
-						<th>
-							Lo Bak Gou (Pan Fried Turnip Cake)
-						</th>
-						<tr align = "center"> 
-							<td>
-								<img src = "../images/pan_fried_turnip_cake.jpeg" width = 200 height = 200> 
-							</td>
-						</tr>
-						<tr align = "center">
-							<td>
-								Price: $7.50
-							</td>
-						</tr>
-						<tr>
-							<td align = "center"><font size="-1">
-								Also known as turnip cake, our lo bak gou is made with grated Chinese turnip, 
-								rice flour, and other ingredients, then pan-fried to a golden brown. It's 
-								crispy on the outside and soft and chewy on the inside, making it a tasty 
-								and satisfying dim sum item.
-							</font></td>
-						</tr>
-					</tr>
-				</table>
-			</td>
-			<!-- Item 5 -->
-			<td>
-				<table align = "center" bgcolor = "tomato" border = 5px height="100%">
-					<tr>
-						<th>
-							Lo Mai Gai (Sticky Rice In Lotus Leaf)
-						</th>
-						<tr align = "center"> 
-							<td>
-								<img src = "../images/dim-sum-sticky-rice-lettuce.jpeg" width = 200 height = 200> 
-							</td>
-						</tr>
-						<tr align = "center">
-							<td>
-								Price: $7.50
-							</td>
-						</tr>
-						<tr>
-							<td align = "center"><font size="-1">
-								These steamed glutinous rice dumplings are filled with juicy chicken, mushrooms, 
-								and other ingredients, then wrapped in a lotus leaf and steamed to perfection. 
-								Our lo mai gai is a delicious and filling dim sum dish that's perfect for 
-								breakfast, lunch, or dinner.
-							</font></td>
-						</tr>
-					</tr>
-				</table>
-			</td>
-		</table>
 		</center>
+		<!-- Item 1 -->
+			<table class="product_page">
+				<tr>
+					<th>Item</th>
+					<th>Picture</th>
+					<th>Price</th>
+					<th>Description</th>
+				</tr>
+				<tr>
+					<td>Char Siu Bao (Steamed BBQ Pork Buns)</td>
+					<td><img src = "../images/steamed-bbq-pork-buns.jpeg" width = 200 height = 200></td>
+					<td>$8.00</td>
+					<td>
+						Soft and fluffy steamed buns filled with savory and sweet barbecued pork. 
+						Our char siu bao is a popular dim sum item that's perfect for any time of day.
+					</td>
+				</tr>
+		<!-- Item 2 -->
+				<tr>
+					<td>Har Gao (Shrimp Dumplings)</td>
+					<td><img src = "../images/har_gow.jpg" width = 200 height = 200></td>
+					<td>$9.00</td>
+					<td>
+						These translucent steamed shrimp dumplings are a classic dim 
+						sum dish that never goes out of style. Our har gao is made with 
+						fresh, succulent shrimp and wrapped in a thin, delicate wrapper.
+					</td>
+				</tr>
+		<!-- Item 3 -->
+				<tr>
+					<td>Siu Mai (Shrimp and Pork Dumplings)</td>
+					<td><img src = "../images/shumai.jpeg" width = 200 height = 200></td>
+					<td>$8.50</td>
+					<td>
+						These bite-sized steamed pork and shrimp dumplings are a 
+						must-try dim sum item. Our siu mai is made with high-quality 
+						ground pork and juicy shrimp, wrapped in a thin, tender wrapper.
+					</td>
+				</tr>
+		<!-- Item 4 -->
+				<tr>
+					<td>Lo Bak Gou (Pan Fried Turnip Cake)</td>
+					<td><img src = "../images/pan_fried_turnip_cake.jpeg" width = 200 height = 200></td>
+					<td>$7.50</td>
+					<td>
+						Also known as turnip cake, our lo bak gou is made with grated Chinese turnip, 
+						rice flour, and other ingredients, then pan-fried to a golden brown. It's 
+						crispy on the outside and soft and chewy on the inside, making it a tasty 
+						and satisfying dim sum item.
+					</td>
+				</tr>
+		<!-- Item 5 -->
+				<tr>
+					<td>Lo Mai Gai (Sticky Rice In Lotus Leaf)</td>
+					<td><img src = "../images/dim-sum-sticky-rice-lettuce.jpeg" width = 200 height = 200></td>
+					<td>$7.50</td>
+					<td>
+						These steamed glutinous rice dumplings are filled with juicy chicken, mushrooms, 
+						and other ingredients, then wrapped in a lotus leaf and steamed to perfection. 
+						Our lo mai gai is a delicious and filling dim sum dish that's perfect for 
+						breakfast, lunch, or dinner.
+					</td>
+				</tr>
+			</table>
+		
+		<br><br><br><br><br><br><br><br><br><br><br><br>
+		
+		<footer>
+			<div class = "footer">
+				<div class = "person1"><p>Alpha Diallo<br>Email: adiallo@sfsu.edu</p></div>
+				<div class = "person2"><p>Milton Tomasino<br>Email: mtomasino@sfsu.edu</p></div>
+				<div class = "person3"><p>Thomas Bercasio<br>Email: tbercasio@sfsu.edu</p></div>
+				<div class = "person4"><p>Tong Lin<br>Email: tlin@sfsu.edu</p></div>
+			</div>
+		</footer>
 	</body>
-	<br><br><br><br><br><br><br><br><br><br><br><br>
-	<footer>
-	
-		<center><h3><b>Contact Information:</b></h3><br>
-		<table>
-			<tr>
-				<td>Alpha Diallo&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-				<td>Milton Tomasino&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-				<td>Thomas Bercasio&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-				<td>Tong Lin</td>
-			</tr>
-			
-			<tr>
-				<td>Email: adiallo@sfsu.edu&nbsp&nbsp&nbsp</td>
-				<td>Email: mtomasino@sfsu.edu&nbsp&nbsp&nbsp</td>
-				<td>Email: tbercasio@sfsu.edu&nbsp&nbsp&nbsp</td>
-				<td>Email: tlin@sfsu.edu&nbsp&nbsp&nbsp</td>
-			</tr>
-		</table></center>
-	</footer>
 </html>

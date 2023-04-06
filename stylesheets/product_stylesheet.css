@@ -60,6 +60,25 @@ body {
 }
 
 
+.product_page {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.product_page th,td {
+  text-align: left;
+  padding: 8px;
+}
+
+.product_page tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.product_page th {
+  background-color: tomato;
+  color: white;
+}
+
 /* Copied from Milton who designed footer */
 .footer{
 	display: flex;
@@ -107,3 +126,6 @@ body {
 	border-right: 2px solid black;
 	border-bottom: 2px solid black;
 }
+
+
+
