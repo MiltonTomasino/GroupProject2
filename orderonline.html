@@ -9,13 +9,23 @@
 		<link rel="stylesheet" href="./stylesheets/orderonline_stylesheet.css">
 	</head>
 	<header>	
-		<center><h1 class = "pageTitle"> Order Online </h3></center>
+		<center><h1 class = "pageTitle" id = "top"><u>Order Online </u></h1></center>
 		<nav>
 			<ul class = "navBar">
 				<li><a id = "link" href = "HomePage.html">Home Page</a></li>
 				<li><a id = "link" href = "menu.html">Menu</a></li>
 				<li><a id = "link" href = "about_us.html">About Us</a></li>
-				<li><a id = "link" href = "orderonline.html">Order Online</a></li>
+				<li class = "dropdown">
+					<a id = "link" class = "dropbtn" href = "orderonline.html">Order Online&#8615</a>
+					<div class="dropdown-content">
+						<a href="#appetizers">Appetizers</a>
+						<a href="#dimsum">Dim Sum</a>
+						<a href="#noodles">Noodles</a>
+						<a href="#beef">Beef</a>
+						<a href="#desserts">Dessert</a>
+						<a href="#drinks">Drinks</a>
+					</div>
+				</li>
 				<li><a id = "link" href = "faq.html">FAQ</a></li>
 				<li><a id ="link" href="signin.html">Sign Up</a></li>
 				<li><a id ="link" href="registration.html">Log In</a></li>
@@ -27,7 +37,7 @@
 		<form action = "payment.html">
 			<center>
 			<!-- Appetizers -->	
-			<h2 class = "foodTitle"> Appetizers </h2>
+			<h2 class = "foodTitle" id = "appetizers"> Appetizers </h2>
 			<table class = "foodGroup">
 				<!-- Item 1-->
 				<td>
@@ -165,7 +175,7 @@
 			</table>
 			
 			<!-- Dim Sum -->
-			<h2 class = "foodTitle"> Dim Sum </h2>
+			<h2 class = "foodTitle" id = "dimsum"> Dim Sum </h2>
 			<table class = "foodGroup">
 				<!-- Item 1-->
 				<td>
@@ -300,7 +310,7 @@
 			</table>
 			
 			<!-- Noodle Section -->
-			<h2 class = "foodTitle"> Noodles </h2>
+			<h2 class = "foodTitle" id = "noodles"> Noodles </h2>
 			<table class = "foodGroup">
 				<!-- Item 1 -->
 				<td>
@@ -460,7 +470,7 @@
 				</td>
 			</table>
 			
-			<h2 class = "foodTitle"> Beef </h2>
+			<h2 class = "foodTitle" id = "beef"> Beef </h2>
 			<table class = "foodGroup">
 				<!-- Item 1 -->
 				<td>
@@ -569,7 +579,7 @@
 			</table>
 			
 			<!-- Desserts -->
-			<h2 class = "foodTitle"> Desserts </h2>
+			<h2 class = "foodTitle" id="desserts"> Desserts </h2>
 			<table class = "foodGroup">
 				<!-- Item 1 -->
 				<td>
@@ -703,7 +713,7 @@
 				</td>
 			</table>
 			
-			<h2 class = "foodTitle"> Drinks </h2>
+			<h2 class = "foodTitle" id = "drinks"> Drinks </h2>
 			<table class = "foodGroup">
 				<!-- first row -->
 				<tr>
@@ -922,28 +932,17 @@
 				</tr>
 			</table>
 			<input class = "submitButton" type = "submit" value = "Check Out">
-			</center>
+			<h4><a href="#top">Back to top</a><h4>
+			</center>		
 		</form>
 	</body>
 
 	<footer>
-		<center>
-		<h3><b>Contact Information:</b></h3><br>
-		<table>
-			<tr>
-				<td>Alpha Diallo&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-				<td>Milton Tomasino&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-				<td>Thomas Bercasio&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-				<td>Tong Lin</td>
-			</tr>
-			
-			<tr>
-				<td>Email: adiallo@sfsu.edu&nbsp&nbsp&nbsp</td>
-				<td>Email: mtomasino@sfsu.edu&nbsp&nbsp&nbsp</td>
-				<td>Email: tbercasio@sfsu.edu&nbsp&nbsp&nbsp</td>
-				<td>Email: tlin@sfsu.edu&nbsp&nbsp&nbsp</td>
-			</tr>
-		</table>
-		</center>
-	</footer> 
+		<div class = "footer">
+			<div class = "person1"><p>Alpha Diallo<br>Email: adiallo@sfsu.edu</p></div>
+			<div class = "person2"><p>Milton Tomasino<br>Email: mtomasino@sfsu.edu</p></div>
+			<div class = "person3"><p>Thomas Bercasio<br>Email: tbercasio@sfsu.edu</p></div>
+			<div class = "person4"><p>Tong Lin<br>Email: tlin@sfsu.edu</p></div>
+		</div>
+	</footer>
 </html>
