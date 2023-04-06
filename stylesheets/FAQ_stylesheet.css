@@ -48,9 +48,11 @@ header{
 }
 /* Styling Main Content Of Page*/
 body {
-	background-color: wheat;	
+	background-color: wheat;
 }
-
+.content{
+	align:center;
+}
 h2 {
 	font-family: Brush Script MT, cursive;
 	font-size: 200%;
