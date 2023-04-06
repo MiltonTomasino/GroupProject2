@@ -11,6 +11,7 @@ header{
 	background-repeat: no-repeat;
 	background-position-x: center;
 	background-size:cover;
+	height: 600px;
 }
 .accountInfo{
 	display: flex;
