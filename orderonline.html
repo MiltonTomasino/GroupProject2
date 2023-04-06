@@ -7,18 +7,40 @@
 			Order Online 
 		</title>
 		<link rel="stylesheet" href="./stylesheets/orderonline_stylesheet.css">
+		<link rel="stylesheet" href="./stylesheets/menu_stylesheet.css">
 	</head>
 	<header>
 		<div class = "pageTitle">	
-			<center><h1 id = "top"><u>Order Online </u></h1></center>
+			<center><h1><u>Order Online </u></h1></center>
 		</div>
 		<nav>
 			<ul class = "navBar">
 				<li><a id = "link" href = "HomePage.html">Home Page</a></li>
+				<div class = "menu">
 				<li><a id = "link" href = "menu.html">Menu</a></li>
+					<div class = "sub-menu">
+						<a id = "menu-link" href = "./menu_items/Appetizers.html">Appetizers</a>
+						<a id = "menu-link" href = "./menu_items/Dim_Sum.html">Dim Sum</a>
+						<a id = "menu-link" href = "./menu_items/Noodles.html">Noodles</a>
+						<a id = "menu-link" href = "./menu_items/Beef.html">Beef</a>
+						<a id = "menu-link" href = "./menu_items/Desserts.html">Desserts</a>
+						<a id = "menu-link" href = "./menu_items/Drinks.html">Drinks</a>
+					</div>
+				</div>
 				<li><a id = "link" href = "about_us.html">About Us</a></li>
+				<li><a id = "link" href = "orderonline.html">Order Online</a></li>
+				<li><a id = "link" href = "faq.html">FAQ</a></li>
+				<li><a id ="link" href="signin.html">Sign Up</a></li>
+				<li><a id ="link" href="registration.html">Log In</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<body>
+		<div>
+			<ul class = "navBar">
 				<li class = "dropdown">
-					<a id = "link" class = "dropbtn" href = "orderonline.html">Order Online&#8615</a>
+					<a id = "top" class = "dropbtn" href = "orderonline.html">Jump To Different Parts of The Menu</a>
 					<div class="dropdown-content">
 						<a href="#appetizers">Appetizers</a>
 						<a href="#dimsum">Dim Sum</a>
@@ -28,14 +50,8 @@
 						<a href="#drinks">Drinks</a>
 					</div>
 				</li>
-				<li><a id = "link" href = "faq.html">FAQ</a></li>
-				<li><a id ="link" href="signin.html">Sign Up</a></li>
-				<li><a id ="link" href="registration.html">Log In</a></li>
 			</ul>
-		</nav>
-	</header>
-
-	<body>
+		</div>
 		<form action = "payment.html">
 			<center>
 			<!-- Appetizers -->	
