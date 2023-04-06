@@ -113,6 +113,9 @@ body {
 	display: flex;
 	justify-content:center:
 }
+input[type=number]:focus{
+	background-color: lightgreen;
+}
 td{
 	justify-content: center;
 }
