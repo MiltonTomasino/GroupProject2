@@ -196,3 +196,19 @@
 .menu:hover .sub-menu {
 	display: block;
 }
+
+/*image Carousel*/
+
+.imageCarousel{
+	position: relative;
+	max-width: 500px;
+	margin: auto;
+}
+
+.slides{
+	display: none;
+}
+
+.leftButton, .rightButton{
+	cursor: pointer;
+}
