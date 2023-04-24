@@ -120,12 +120,7 @@
 
 .description1{
 	grid-area: description1;
-	background-color: white;
 	border: 5px solid #ff4d4d;
-	text-align: center;
-	font-size: 200%;
-	padding-top: 150px;
-	padding-bottom: 150px;
 	margin: auto;
 }
 
@@ -136,24 +131,27 @@
 	border: 5px solid #ff4d4d;
 	text-align: center;
 	font-size: 200%;
-	padding-top: 150px;
-	padding-bottom: 150px;
-	margin: auto;
+	padding-top: 200px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 .image1{
 	grid-area: image1;
 	border: 5px solid #ff4d4d;
+	
 }
 
 .image2{
 	grid-area: image2;	
 	border: 5px solid #ff4d4d;
+	width: 800px;
 }
 
 .image3{
 	grid-area: image3;
 }
+
 
 .ad1{
 	grid-area: ad1;
@@ -197,18 +195,62 @@
 	display: block;
 }
 
-/*image Carousel*/
-
-.imageCarousel{
-	position: relative;
-	max-width: 500px;
-	margin: auto;
-}
-
-.slides{
+.picture{
 	display: none;
 }
 
-.leftButton, .rightButton{
-	cursor: pointer;
+.picture img{
+	opacity: 1;
+	width: 805px;
+	height: 500px;
+	transition: 0.5s ease;
+}
+
+.btns{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.prev, .next{
+	font-size: 30px;
+	color: #ffdb4d;
+	background-color: #ff4d4d;
+	border-radius: 5px;
+	width: 400px;
+}
+
+.carouselContainer button:hover{
+	background-color: white;
+	color: black;
+}
+
+.box{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transition: .5s ease;
+	opacity: 0;
+}
+
+.picContainer{
+	position: relative;
+}
+
+.picContainer:hover img{
+	opacity: 0.3;
+}
+
+.picContainer:hover .box{
+	opacity: 1;
+}
+
+.text{
+	background-color: #ff4d4d;
+	color: #ffdb4d;
+	font-size: 20px;
+	padding: 10px;
+	border-radius: 5px;
 }

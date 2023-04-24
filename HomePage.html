@@ -37,23 +37,42 @@
 	
 	<body bgcolor = "Wheat">
 
-	<div class="imageCarousel">
-		<button class="leftButton" onclick="plusSlides(-1)">&#8592;</button>
-		<button class="rightButton" onclick="plusSlides(1)">&#8594;</button>
-
-		<ul>
-			<li class="slides"><img src="./images/beef-chow-fun.jpeg"></li>
-			<li class="slides"><img src="./images/dim-sum-sticky-rice-lettuce.jpeg"></li>
-			<li class="slides"><img src="./images/oolong-tea.jpg"></li>
-			<li class="slides"><img src="./images/singapore-noodles.jpeg"></li>
-		</ul>
-	</div>
+		<div class = "header">Welcome!</div>
 
 	<div class = "container">
 		<div class = "imageContainer">
-			<div class = "header">Welcome!</div>
+			
 			<div class = "image1"><img class = "size" src = "images/Chef.webp"></div>
-			<div class = "description1">We have the finest chefs in the country working in our restaurant and they are eager to serve you their best!</div>
+			<div class = "description1">
+				<div class="carouselContainer">
+					<div class="picContainer">
+						<div class="picture"><img src="./images/beef-chow-fun.jpeg"></div>
+						<div class="box">
+							<div class="text">Contains:<br>1 bowl of beef chow fun<br>Pork and Shrimp Potstickers<br>Drink of choice</div>
+						</div>
+					</div>
+					<div class="picContainer">
+						<div class="picture"><img src="./images/dim-sum-sticky-rice-lettuce.jpeg"></div>
+						<div class="box">
+							<div class="text">Contains:<br>1 Lo Mai Gai wrapped in Lotus Leaf<br>Spicy Wontons<br>Drink of choice</div>
+						</div>
+					</div>
+					<div class="picContainer">
+						<div class="picture"><img src="./images/oolong-tea.jpg"></div>
+						<div class="box">
+							<div class="text">Contains:<br>1 cup of Oolong Tea<br>2 Egg Custart Tarts</div>
+						</div>
+					</div>
+					<div class="picContainer">
+						<div class="picture"><img src="./images/singapore-noodles.jpeg"></div>
+						<div class="box">
+							<div class="text">Contains:<br>1 bowl of Singapore Style Curry Noodles<br>Lettuc Wraps<br>Drink of Choice</div>
+						</div>
+					</div>
+					<button class="prev" onclick="plusSlides(-1)">&#8592;</button>
+					<button class="next" onclick="plusSlides(1)">&#8594;</button>
+				</div>
+			</div>
 			<div class = "ad1"><img class = "size" src = "images/ad1.webp"></div>
 			<div class = "image2"><img class = "size" src = "images/Tables.jpeg"></div>
 			<div class = "description2">Our restaurant is decorated to replicate authentic Chinese culture to match the quality of our food!</div>
@@ -78,6 +97,6 @@
 		</div>
 	</footer>
 
-	<script src="./javascript/javascript1.js"></script>
+	<script src="./javascript/imageCarousel.js"></script>
 	
 </html>
