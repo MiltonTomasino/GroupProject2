@@ -29,7 +29,7 @@ function orderOnlineCookieNotification()
 
 //necessary functions for cookie collection
 //takes a name value ( expiration set for 6 months prob by default)
-function setCookie(cookieName, cookieValue, expirationDays)
+function setCookie(cookieName, cookieValue)
 {
 	const d = new Date();
 	d.setTime(d.getTime() + (180 * 24 * 60 * 60 * 1000));
