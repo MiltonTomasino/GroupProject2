@@ -63,11 +63,12 @@ function getCookie(cookieName)
 	return "";
 }
 
+//checks if user has been here before
 function checkCookie()
 {
 	let user = getCookie("username");
 	if (user != "") { //if a visitor has come and has given their name and a recommendation
-		alert("Welcome back Chinese Food Lover! Lets get some " + randomMenuItem() + " today!");
+		alert("Welcome back " + user + "! Lets get some " + randomMenuItem() + " today!");
 	}
 	else{
 		user = prompt("What is your name?", "");
@@ -77,6 +78,7 @@ function checkCookie()
 	}
 }
 
+//takes a random item within the 2D menu array and returns it
 function randomMenuItem()
 {
 	var save;
