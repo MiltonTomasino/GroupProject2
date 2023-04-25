@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="./stylesheets/homepage_stylesheet.css">
 	<script src="https://kit.fontawesome.com/174ef0c52c.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="./stylesheets/menu_stylesheet.css">
+	<script language="JavaScript" src="javascript/checkout.js"></script>
 	</head>
 	
 	<header><center>
@@ -32,20 +33,22 @@
 	</nav>
 	<br>
 	
-	<body bgcolor = "Wheat">
+	<body bgcolor = "Wheat" onload="createCart(); createCheckout(true)">
 	<center>
 		<h2>Your order have been placed!</h2>
 
-		<div class="container" id="receipt">
-			  <h2>Receipt</h2>
-			  <p>2 x Egg Rolls<span class="price">$16.00</span></p>
-			  <p>1 x Spicy Beef Noodle Soup<span class="price">$16.50</span></p>
-			  <hr>
-			  <p>Tax <span class="price">$3.20</span></p>
-			  <p>Delivery Fee <span class="price">$5.00</span></p>
-			  <p>Total <span class="price" style="color:black"><b>$40.70</b></span></p>
-		   </div>
-		</div>
+		  <div class="col-25" id="receipt">
+			 <div class="container">
+			   <h2>Receipt</h2>
+               <div id="cartList">
+
+			   </div>
+			   <hr>
+			   <p>Delivery Fee <span class="price">$5.00</span></p>
+			   <p>Total $<span class="price" style="color:black"><b id="totalPrice"></b></span></p>
+			</div>
+			</div>
+		  </div>
 
 		
 
