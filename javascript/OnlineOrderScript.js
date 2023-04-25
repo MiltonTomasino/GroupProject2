@@ -1,10 +1,20 @@
 //This file will contain some code related to the Order Online section.
 
 //global values
+
 //determines if user wants to enable cookies
 let cookiesOn = null;
-//online order cookie
-let onlineOrders = document.cookie;
+
+//2D global array for menu items, do not expect to change
+//for the final iteration when we need to consider backend this will also help in getting orders together.
+const appItems = ["Egg Rolls", "Crab Rangoon", "Spicy Wontons","Lettuce Wraps","Pork and Shrimp Potstickers"];
+const dimsumItems = [ "Char Siu Bao", "Har Gao", "Siu Mai", "Lo Bak Gai", "Lo Mai Gai"];
+const noodleItems = ["Beef Chow Fun", "Dan Dan Noodles", "Beef Soup with Hand Pulled Noodles","Spicy Beef Soup with Hand Pulled Noodles","Singapore Style Curry Noodles", "Cantonese Style Wonton Soup With Hand Pulled Noodles"];
+const beefItems = [ "Beef With Broccoli" , "Mongolian Beef", "Beef and Vegetable Stir Fry" , "Kung Pao Beef"];
+const dessertItems = [ "Egg Custard" , "Red Bean Soup" , "Jian Dui", "Sweet Taro Soup" , "Mango Sticky Rice"];
+const drinkItems =  ["Date Ginger Tea", "Bubble Tea" , "Coke", "Diet Coke" , "Sprite" , "Plum Juice", "Soy Milk", "Tsing Tao Beer"];
+const menuGroups = [appItems, dimsumItems, noodleItems, beefItems, dessertItems, drinkItems];
+
 
 //this function will make an alert stating that cookies will be recorded for marketing purposes
 function orderOnlineCookieNotification()
@@ -34,15 +44,15 @@ function setCookie(cookieName, cookieValue)
 	const d = new Date();
 	d.setTime(d.getTime() + (180 * 24 * 60 * 60 * 1000));
 	let expires = "expires="+d.toUTCString();
-	onlineOrders = cookieName + "=" + cookieValue + ";" + expires + ";path=/";
+	document.cookie = cookieName + "=" + cookieValue + ";" + expires + ";path=/";
 }
 
 function getCookie(cookieName)
 {
 	let name = cookieName + "=";
-	let ca = document.cookie.split(';');
-	for(let i = 0; i < ca.length; i++){
-		let c = ca[i];
+	let cookieArray = document.cookie.split(';');
+	for(let i = 0; i < cookieArray.length; i++){
+		let c = cookieArray[i];
 		while (c.charAt(0) == ' '){
 		c = c.substring(1);
 		}
@@ -53,10 +63,11 @@ function getCookie(cookieName)
 	return "";
 }
 
-function checkCookie() {
+function checkCookie()
+{
 	let user = getCookie("username");
-	if (user != "") { //if a visitor has come and has given their name or any sort of information
-		alert("Welcome back Chinese Food Lover!");
+	if (user != "") { //if a visitor has come and has given their name and a recommendation
+		alert("Welcome back Chinese Food Lover! Lets get some " + randomMenuItem() + " today!");
 	}
 	else{
 		user = prompt("What is your name?", "");
@@ -64,41 +75,13 @@ function checkCookie() {
 			setCookie("username", user);
 		}
 	}
-} 
-
-//checks if user is interested in an item by recording if they clicked on an input field.
-function userClickOnItem(itemNumber, cookiesOn){
-	if(cookiesOn){
-		
-	}
-	else{ //does nothing if user doesn't want cookies on
-		return 0;
-	}
 }
 
-
-
-//obsolete functions
-//removes all menu elements
-function removeAllMenuElements()
+function randomMenuItem()
 {
-	changeDisplay("none", "none","none","none","none","none");
-}
-
-//adds all menu elements back
-function restoreDisplay()
-{
-	changeDisplay("block", "block" , "block" , "block", "block", "block");
-}
-
-// will change styling depending on arguments paassed in the parameter.
-function changeDisplay(appetizers, dimsum, noodles, beef, desserts, drinks)
-{
-	document.getElementById("appetizers").style.display = appetizers;
-	document.getElementById("dimsum").style.display = dimsum;
-	document.getElementById("noodles").style.display = noodles;
-	document.getElementById("appetizers").style.display = beef;
-	document.getElementById("appetizers").style.display = desserts;
-	document.getElementById("appetizers").style.display = drinks;
+	var save;
+	//checks 2d array menuItem and selects a random item to return
+	save = menuGroups[Math.floor(Math.random()*5)][Math.floor(Math.random()*4)]
+	return save;
 }
 
