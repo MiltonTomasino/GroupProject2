@@ -2,6 +2,15 @@ body {
 	background-color: wheat;
 }
 
+h1 {
+	text-align: center;
+}
+
+table {
+	display: flex;
+	justify-content: center;
+}
+
 .title{
 	font-family: Brush Script MT, cursive;
 	font-size: 500%;
@@ -88,3 +97,67 @@ body {
 	  transform: scale(1);
 	}
   }
+
+#imgContainer {
+	display: flex;
+	justify-content: center;
+	margin: 50px;
+}
+
+#blurbContainer {
+	display:flex;
+	justify-content: center;
+}
+
+#blurb {
+	text-align: justify;
+	width: 500px;
+	font-size:large;
+}
+
+  /* From Milton For his footer */
+  .footer{
+	display: flex;
+	justify-content: center;
+}
+
+.footer div p{
+	font-family: Times New Roman;
+	font-size: 125%;
+}
+
+.person1{
+	background-color: whitesmoke;
+	margin-right: 0px;
+	padding: 10px;
+	border-left: 2px solid black;
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+}
+
+.person2{
+	background-color: whitesmoke;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding: 10px;
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+}
+
+.person3{
+	background-color: whitesmoke;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding: 10px;
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+}
+
+.person4{
+	background-color: whitesmoke;
+	margin-left: 0px;
+	padding: 10px;
+	border-top: 2px solid black;
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+}
