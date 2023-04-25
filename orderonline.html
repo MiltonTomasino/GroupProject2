@@ -8,8 +8,9 @@
 		</title>
 		<link rel="stylesheet" href="./stylesheets/orderonline_stylesheet.css">
 		<link rel="stylesheet" href="./stylesheets/menu_stylesheet.css">
-		<!-- checkout.js for payment page -->
-		<script language="JavaScript" src="javascript/checkout.js"></script>
+		
+		<!-- loads scripts for page -->
+		<script src="./javascript/OnlineOrderScript.js"> </script>
 	</head>
 	<header>
 		<div class = "pageTitle">	
@@ -21,12 +22,12 @@
 				<div class = "menu">
 				<li><a id = "link" href = "menu.html">Menu</a></li>
 					<div class = "sub-menu">
-						<a id = "menu-link" href = "./menu_items/Appetizers.html">Appetizers</a>
-						<a id = "menu-link" href = "./menu_items/Dim_Sum.html">Dim Sum</a>
-						<a id = "menu-link" href = "./menu_items/Noodles.html">Noodles</a>
-						<a id = "menu-link" href = "./menu_items/Beef.html">Beef</a>
-						<a id = "menu-link" href = "./menu_items/Desserts.html">Desserts</a>
-						<a id = "menu-link" href = "./menu_items/Drinks.html">Drinks</a>
+						<p id = "menu-link" href = "./menu_items/Appetizers.html">Appetizers</p>
+						<p id = "menu-link" href = "./menu_items/Dim_Sum.html">Dim Sum</p>
+						<p id = "menu-link" href = "./menu_items/Noodles.html">Noodles</p>
+						<p id = "menu-link" href = "./menu_items/Beef.html">Beef</p>
+						<p id = "menu-link" href = "./menu_items/Desserts.html">Desserts</p>
+						<p id = "menu-link" href = "./menu_items/Drinks.html">Drinks</p>
 					</div>
 				</div>
 				<li><a id = "link" href = "about_us.html">About Us</a></li>
@@ -37,12 +38,13 @@
 			</ul>
 		</nav>
 	</header>
-	<!-- createCart() for payment page -->
-	<body onload="createCart();">
+
+	<body onload="orderOnlineCookieNotification()">
 		<div>
 			<ul class = "navBar">
 				<li class = "dropdown">
 					<a id = "top" class = "dropbtn" href = "orderonline.html">Jump To Different Parts of The Menu</a>
+					<!-- TODO Onclick open up section of the menu necessary, close sections that aren't necessary -->
 					<div class="dropdown-content">
 						<a href="#appetizers">Appetizers</a>
 						<a href="#dimsum">Dim Sum</a>
@@ -58,7 +60,7 @@
 			<center>
 			<!-- Appetizers -->	
 			<h2 class = "foodTitle" id = "appetizers"> Appetizers </h2>
-			<table class = "foodGroup">
+			<table class = "foodGroup" id = "appetizers">
 				<!-- Item 1-->
 				<td>
 					<table class = "foodItem">
@@ -81,7 +83,7 @@
 									<label for "ER_Number">Number of Orders:</label><br>
 									<input type="number" id = "ER_Number" name "ER_Number" min = "0">
 								</td>
-							</t>
+							</tr>
 						</tr>
 					</table>
 				</td>
@@ -107,7 +109,7 @@
 									<label for "CR_Number">Number of Orders:</label><br>
 									<input type="number" id = "CR_Number" name "CR_Number" min = "0">
 								</td>
-							</t>
+							</tr>
 						</tr>
 					</table>
 				</td>
@@ -186,7 +188,7 @@
 									<label for "PSP_Number">Number of Orders:</label><br>
 									<input type="number" id = "PSP_Number" name "PSP_Number" min = "0">
 								</td>
-							</t>
+							</tr>
 						</tr>
 					</table>
 				</td>
@@ -196,7 +198,7 @@
 			<h4><a href="#top">Back to top</a><h4>
 			<!-- Dim Sum -->
 			<h2 class = "foodTitle" id = "dimsum"> Dim Sum </h2>
-			<table class = "foodGroup">
+			<table class = "foodGroup" id = "dimsum">
 				<!-- Item 1-->
 				<td>
 					<table class = "foodItem">
@@ -219,7 +221,7 @@
 									<label for "CSB_Number">Number of Orders:</label><br>
 									<input type="number" id = "CSB_Number" name "CSB_Number" min = "0">
 								</td>
-							</t>
+							</tr>
 						</tr>
 					</table>
 				</td>
@@ -245,7 +247,7 @@
 									<label for="HG_Number">Number of Orders:</label><br>
 									<input type="number" id = "HGNumber" name = "HG_Number" min = "0">
 								</td>
-							</t>
+							</tr>
 						</tr>
 					</table>
 				</td>
@@ -271,7 +273,7 @@
 									<label for="SMNumber">Number of Orders:</label><br>
 									<input type="number" id = "SM_Number" name = "SM_Number" min = "0">
 								</td>
-							</t>
+							</tr>
 						</tr>
 					</table>
 				</td>
@@ -323,7 +325,7 @@
 									<label for="LMG_Number">Number of Orders:</label><br>
 									<input type="number" id = "LMG_Number" name = "LMG_Number" min = "0">
 								</td>
-							</t>
+							</tr>
 						</tr>
 					</table>
 				</td>
@@ -331,7 +333,7 @@
 			<h4><a href="#top">Back to top</a><h4>
 			<!-- Noodle Section -->
 			<h2 class = "foodTitle" id = "noodles"> Noodles </h2>
-			<table class = "foodGroup">
+			<table class = "foodGroup" id = "noodles">
 				<!-- Item 1 -->
 				<td>
 					<table class = "foodItem">
@@ -354,7 +356,7 @@
 									<label for="BeefChowFun_Number">Number of Orders:</label><br>
 									<input type="number" id = "BeefChowFun_Number" name = "BeefChowFun_Number" min = "0">
 								</td>
-							</t>
+							</tr>
 						</tr>
 					</table>
 				</td>
@@ -380,7 +382,7 @@
 									<label for="DanDan_Number">Number of Orders:</label><br>
 									<input type="number" id = "DanDan_Number" name = "DanDan_Number" min = "0">
 								</td>
-							</t>
+							</tr>
 						</tr>
 					</table>
 				</td>
@@ -406,7 +408,7 @@
 									<label for="BeefSoupNoodles_Number">Number of Orders:</label><br>
 									<input type="number" id = "BeefSoupNoodles_Number" name = "BeefSoupNoodles_Number" min = "0">
 								</td>
-							</t>
+							</tr>
 						</tr>
 					</table>
 				</td>
@@ -432,7 +434,7 @@
 									<label for="SpicyBeefSoupNoodles_Number">Number of Orders:</label><br>
 									<input type="number" id = "SpicyBeefSoupNoodles_Number" name = "SpicyBeefSoupNoodles_Number" min = "0">
 								</td>
-							</t>
+							</tr>
 						</tr>
 					</table>
 				</td>
@@ -458,7 +460,7 @@
 									<label for="SingaporeNoodles_Number">Number of Orders:</label><br>
 									<input type="number" id = "SingaporeNoodles_Number" name = "SingaporeNoodles_Number" min = "0">
 								</td>
-							</t>
+							</tr>
 						</tr>
 					</table>
 				</td>
@@ -484,14 +486,14 @@
 									<label for="WontonNoodles_Number">Number of Orders:</label><br>
 									<input type="number" id = "WontonNoodles_Number" name = "WontonNoodles_Number" min = "0">
 								</td>
-							</t>
+							</tr>
 						</tr>
 					</table>
 				</td>
 			</table>
 			<h4><a href="#top">Back to top</a><h4>
 			<h2 class = "foodTitle" id = "beef"> Beef </h2>
-			<table class = "foodGroup">
+			<table class = "foodGroup" id = "beef">
 				<!-- Item 1 -->
 				<td>
 					<table class = "foodItem">
@@ -540,7 +542,7 @@
 									<label for="MongolianBeef_Number">Number of Orders:</label><br>
 									<input type="number" id = "MongolianBeef_Number" name = "MongolianBeef_Number" min = "0">
 								</td>
-							</t>
+							</tr>
 						</tr>
 					</table>
 				</td>
@@ -592,15 +594,16 @@
 									<label for="KungpaoBeef_Number">Number of Orders:</label><br>
 									<input type="number" id = "KungpaoBeef_Number" name = "KungpaoBeef_Number" min = "0">
 								</td>
-							</t>
+							</tr>
 						</tr>
 					</table>
 				</td>
 			</table>
+			
 			<h4><a href="#top">Back to top</a><h4>
 			<!-- Desserts -->
 			<h2 class = "foodTitle" id="desserts"> Desserts </h2>
-			<table class = "foodGroup">
+			<table class = "foodGroup" id = "desserts">
 				<!-- Item 1 -->
 				<td>
 					<table class = "foodItem">
@@ -623,7 +626,7 @@
 									<label for="CustardTartDessert_Number">Number of Orders:</label><br>
 									<input type="number" id = "CustardTartDessert_Number" name = "CustardTartDessert_Number" min = "0">
 								</td>
-							</t>
+							</tr>
 						</tr>
 					</table>
 				</td>
@@ -649,7 +652,7 @@
 									<label for="RedBeanSoupDessert_Number">Number of Orders:</label><br>
 									<input type="number" id = "RedBeanSoupDessert_Number" name = "RedBeanSoupDessert_Number" min = "0">
 								</td>
-							</t>
+							</tr>
 						</tr>
 					</table>
 				</td>
@@ -675,7 +678,7 @@
 									<label for="SesameBallsDessert_Number">Number of Orders:</label><br>
 									<input type="number" id = "SesameBallsDessert_Number" name = "SesameBallsDessert_Number" min = "0">
 								</td>
-							</t>
+							</tr>
 						</tr>
 					</table>
 				</td>
@@ -701,7 +704,7 @@
 									<label for="SweetTaroSoupDessert_Number">Number of Orders:</label><br>
 									<input type="number" id = "SweetTaroSoupDessert_Number" name = "SweetTaroSoupDessert_Number" min = "0">
 								</td>
-							</t>
+							</tr>
 						</tr>
 					</table>
 				</td>
@@ -727,7 +730,7 @@
 									<label for="MangoStickyDessert_Number">Number of Orders:</label><br>
 									<input type="number" id = "MangoStickyDessert_Number" name = "MangoStickySoupDessert_Number" min = "0">
 								</td>
-							</t>
+							</tr>
 						</tr>
 					</table>
 				</td>
@@ -735,7 +738,7 @@
 			<h4><a href="#top">Back to top</a><h4>
 			
 			<h2 class = "foodTitle" id = "drinks"> Drinks </h2>
-			<table class = "foodGroup">
+			<table class = "foodGroup" id = "drinks">
 				<!-- first row -->
 				<tr>
 					<!-- Item 1 -->
@@ -760,7 +763,7 @@
 										<label for="OolongTeaDrink_Number">Number of Orders:</label><br>
 										<input type="number" id = "OolongTeaDrink_Number" name = "OolongTeaDrink_Number" min = "0">
 									</td>
-								</t>
+								</tr>
 							</tr>
 						</table>
 					</td>
@@ -786,7 +789,7 @@
 										<label for="BubbleTeaDrink_Number">Number of Orders:</label><br>
 										<input type="number" id = "BubbleTeaDrink_Number" name = "BubbleTeaDrink_Number" min = "0">
 									</td>
-								</t>
+								</tr>
 							</tr>
 						</table>
 					</td>
@@ -812,7 +815,7 @@
 										<label for="CokeDrink_Number">Number of Orders:</label><br>
 										<input type="number" id = "CokeDrink_Number" name = "CokeDrink_Number" min = "0">
 									</td>
-								</t>
+								</tr>
 							</tr>
 						</table>
 					</td>
@@ -838,7 +841,7 @@
 										<label for="DietCokeDrink_Number">Number of Orders:</label><br>
 										<input type="number" id = "DietCokeDrink_Number" name = "DietCokeDrink_Number" min = "0">
 									</td>
-								</t>
+								</tr>
 							</tr>
 						</table>
 					</td>
@@ -864,7 +867,7 @@
 										<label for="SpriteDrink_Number">Number of Orders:</label><br>
 										<input type="number" id = "SpriteDrink_Number" name = "SpriteDrink_Number" min = "0">
 									</td>
-								</t>
+								</tr>
 							</tr>
 						</table>
 					</td>
@@ -894,7 +897,7 @@
 										<label for="PlumDrink_Number">Number of Orders:</label><br>
 										<input type="number" id = "PlumDrink_Number" name = "PlumDrink_Number" min = "0">
 									</td>
-								</t>
+								</tr>
 							</tr>
 						</table>
 					</td>
@@ -920,7 +923,7 @@
 										<label for="SoyMilkDrink_Number">Number of Orders:</label><br>
 										<input type="number" id = "SoyMilkDrink_Number" name = "SoyMilkDrink_Number" min = "0">
 									</td>
-								</t>
+								</tr>
 							</tr>
 						</table>
 					</td>
@@ -946,14 +949,13 @@
 										<label for="TTBeerDrink_Number">Number of Orders:</label><br>
 										<input type="number" id = "TTBeerDrink_Number" name = "TTBeerDrink_Number" min = "0">
 									</td>
-								</t>
+								</tr>
 							</tr>
 						</table>
 					</td>
 				</tr>
 			</table>
-			<!-- getOrder() for payment page -->
-			<input class = "submitButton" type = "submit" value = "Check Out" onclick="getOrder()">
+			<input class = "submitButton" type = "submit" value = "Check Out">
 			<h4><a href="#top">Back to top</a><h4>
 			</center>		
 		</form>
