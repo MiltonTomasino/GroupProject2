@@ -8,7 +8,7 @@
 		</title>
 		<link rel="stylesheet" href="./stylesheets/orderonline_stylesheet.css">
 		<link rel="stylesheet" href="./stylesheets/menu_stylesheet.css">
-		
+		<script language="JavaScript" src="javascript/checkout.js"></script>
 		<!-- loads scripts for page -->
 		<script src="./javascript/OnlineOrderScript.js"> </script>
 	</head>
@@ -39,7 +39,7 @@
 		</nav>
 	</header>
 
-	<body onload="orderOnlineCookieNotification()">
+	<body onload="orderOnlineCookieNotification(); createCart();">
 		<div>
 			<ul class = "navBar">
 				<li class = "dropdown">
@@ -955,7 +955,7 @@
 					</td>
 				</tr>
 			</table>
-			<input class = "submitButton" type = "submit" value = "Check Out">
+			<input class = "submitButton" type = "submit" value = "Check Out" onclick="getOrder()>
 			<h4><a href="#top">Back to top</a><h4>
 			</center>		
 		</form>
