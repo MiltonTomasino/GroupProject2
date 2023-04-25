@@ -65,3 +65,26 @@ body {
 .menu:hover .sub-menu {
 	display: block;
 }
+
+#uber-ad-container {
+	text-align: center;
+}
+
+/* Adding some visual flair to the ad */
+#uber-eats-ad {
+	animation-name: pulse;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+  }
+  
+  @keyframes pulse {
+	0% {
+	  transform: scale(1);
+	}
+	50% {
+	  transform: scale(1.1);
+	}
+	100% {
+	  transform: scale(1);
+	}
+  }
