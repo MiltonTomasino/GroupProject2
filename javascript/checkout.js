@@ -2,9 +2,9 @@ function createCart() {
     if (window.localStorage.getItem("cart") == null) {
         //Quantity, Name, Price, Link to Product
         var cartArray = [
-            [1, "Egg Rolls", 8.00, "orderonline.html"],
-            [1, "Crab Rangoon", 9.00, "orderonline.html"],
-            [2, "Spicy Wontons", 8.50, "orderonline.html"],
+            [0, "Egg Rolls", 8.00, "orderonline.html"],
+            [0, "Crab Rangoon", 9.00, "orderonline.html"],
+            [0, "Spicy Wontons", 8.50, "orderonline.html"],
             [0, "Lettuce Wraps", 7.50, "orderonline.html"],
             [0, "Pork and Shrimp Potstickers", 7.50, "orderonline.html"],
             [0, "Char Siu Bao", 8.00, "orderonline.html"],
@@ -190,4 +190,25 @@ function deleteCheckoutItem(id) {
 
         window.localStorage.setItem("cart", JSON.stringify(cart))
     }
+}
+
+function getOrder() {
+    itemList = ["ER_Number", "CR_Number", "SW_Number", "LW_Number", "PSP_Number"];
+    for (i = 0; i < itemList.length; i++) {
+        if (document.getElementById(itemList[i]).value != null) {
+            addToCart(i, parseInt(document.getElementById(itemList[i]).value));
+        } else {
+            console.log("null")
+        }
+        
+    };
+}
+
+
+function addToCart(item, num) {
+    var cart = JSON.parse(window.localStorage.getItem("cart"));
+
+    cart[item][0] += num;
+
+    window.localStorage.setItem("cart", JSON.stringify(cart))
 }
