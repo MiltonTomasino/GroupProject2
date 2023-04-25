@@ -193,12 +193,10 @@ function deleteCheckoutItem(id) {
 }
 
 function getOrder() {
-    itemList = ["ER_Number", "CR_Number", "SW_Number", "LW_Number", "PSP_Number"];
+    itemList = ["ER_Number", "CR_Number", "SW_Number", "LW_Number", "PSP_Number", "CSB_Number", "HGNumber", "SM_Number", "LBG_Number", "LMG_Number", "BeefChowFun_Number", "DanDan_Number", "BeefSoupNoodles_Number", "SpicyBeefSoupNoodles_Number", "SingaporeNoodles_Number", "WontonNoodles_Number", "BroccoliBeef_Number", "MongolianBeef_Number", "VegetableStirfryBeef_Number", "KungpaoBeef_Number", "CustardTartDessert_Number", "RedBeanSoupDessert_Number", "SesameBallsDessert_Number", "SweetTaroSoupDessert_Number", "MangoStickyDessert_Number", "OolongTeaDrink_Number", "BubbleTeaDrink_Number", "CokeDrink_Number", "DietCokeDrink_Number", "SpriteDrink_Number", "PlumDrink_Number", "SoyMilkDrink_Number", "TTBeerDrink_Number"];
     for (i = 0; i < itemList.length; i++) {
-        if (document.getElementById(itemList[i]).value != null) {
+        if (parseInt(document.getElementById(itemList[i]).value) > 0) {
             addToCart(i, parseInt(document.getElementById(itemList[i]).value));
-        } else {
-            console.log("null")
         }
         
     };
@@ -208,7 +206,7 @@ function getOrder() {
 function addToCart(item, num) {
     var cart = JSON.parse(window.localStorage.getItem("cart"));
 
-    cart[item][0] += num;
+    cart[item][0] = num;
 
     window.localStorage.setItem("cart", JSON.stringify(cart))
 }
