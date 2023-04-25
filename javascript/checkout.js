@@ -41,7 +41,7 @@ function createCart() {
     }
 }
 
-function createCheckout() {
+function createCheckout(receipt=false) {
     // create cart 
     var cart = JSON.parse(window.localStorage.getItem("cart"));
     var total = 0.00;
@@ -49,7 +49,12 @@ function createCheckout() {
 
     for (let i = 0; i < cart.length; i++) {
         if (cart[i][0] > 0) {
-            createCheckoutItem(i);
+            if(receipt==false){
+                createCheckoutItem(i);
+            } else {
+                createCheckoutItem(i,true);
+            }
+            
             total += (cart[i][2] * cart[i][0]);
             amountInCart += cart[i][0];
             // console.log(total)
@@ -62,7 +67,7 @@ function createCheckout() {
 }
 
 
-function createCheckoutItem(id) {
+function createCheckoutItem(id, receipt=false) {
     // create each item in cart
     var cart = JSON.parse(window.localStorage.getItem("cart"));
 
@@ -77,39 +82,42 @@ function createCheckoutItem(id) {
     productTag.appendChild(a);
     productTag.appendChild(document.createTextNode("\n"));
 
-    var increaseButton = document.createElement("button");
-    increaseButton.setAttribute("class", "quantity");
-    var increaseCheckout = "increaseCheckoutItem(" + id + ")";
-    increaseButton.setAttribute("onclick", increaseCheckout);
-    var plusString = document.createTextNode("+");
-    increaseButton.appendChild(plusString);
-    productTag.appendChild(increaseButton);
-    productTag.appendChild(document.createTextNode("\n"));
+    if(receipt==false){
+        var increaseButton = document.createElement("button");
+        increaseButton.setAttribute("class", "quantity");
+        var increaseCheckout = "increaseCheckoutItem(" + id + ")";
+        increaseButton.setAttribute("onclick", increaseCheckout);
+        var plusString = document.createTextNode("+");
+        increaseButton.appendChild(plusString);
+        productTag.appendChild(increaseButton);
+        productTag.appendChild(document.createTextNode("\n"));
 
-    var productQuantity = document.createElement("a");
-    productQuantity.setAttribute("id", cart[id][1] + "Quantity");
-    var QuantityAmount = document.createTextNode(cart[id][0]);
-    productQuantity.appendChild(QuantityAmount);
-    productTag.appendChild(productQuantity);
-    productTag.appendChild(document.createTextNode("\n"));
+        var productQuantity = document.createElement("a");
+        productQuantity.setAttribute("id", cart[id][1] + "Quantity");
+        var QuantityAmount = document.createTextNode(cart[id][0]);
+        productQuantity.appendChild(QuantityAmount);
+        productTag.appendChild(productQuantity);
+        productTag.appendChild(document.createTextNode("\n"));
 
-    var decreaseButton = document.createElement("button");
-    decreaseButton.setAttribute("class", "quantity");
-    var decreaseCheckout = "decreaseCheckoutItem(" + id + ")";
-    decreaseButton.setAttribute("onclick", decreaseCheckout);
-    var minusString = document.createTextNode("-");
-    decreaseButton.appendChild(minusString);
-    productTag.appendChild(decreaseButton);
-    productTag.appendChild(document.createTextNode("\n"));
+        var decreaseButton = document.createElement("button");
+        decreaseButton.setAttribute("class", "quantity");
+        var decreaseCheckout = "decreaseCheckoutItem(" + id + ")";
+        decreaseButton.setAttribute("onclick", decreaseCheckout);
+        var minusString = document.createTextNode("-");
+        decreaseButton.appendChild(minusString);
+        productTag.appendChild(decreaseButton);
+        productTag.appendChild(document.createTextNode("\n"));
 
-    var deleteButton = document.createElement("button");
-    deleteButton.setAttribute("class", "delete");
-    var deleteCheckout = "deleteCheckoutItem(" + id + ")";
-    deleteButton.setAttribute("onclick", deleteCheckout);
-    var deleteString = document.createTextNode("Delete");
-    deleteButton.appendChild(deleteString);
-    productTag.appendChild(deleteButton);
-    productTag.appendChild(document.createTextNode("\n"));
+        var deleteButton = document.createElement("button");
+        deleteButton.setAttribute("class", "delete");
+        var deleteCheckout = "deleteCheckoutItem(" + id + ")";
+        deleteButton.setAttribute("onclick", deleteCheckout);
+        var deleteString = document.createTextNode("Delete");
+        deleteButton.appendChild(deleteString);
+        productTag.appendChild(deleteButton);
+        productTag.appendChild(document.createTextNode("\n"));
+    }
+    
 
     var productPrice = document.createElement("span");
     productPrice.setAttribute("id", cart[id][1] + "Price");
