@@ -15,26 +15,27 @@ const dessertItems = [ "Egg Custard" , "Red Bean Soup" , "Jian Dui", "Sweet Taro
 const drinkItems =  ["Date Ginger Tea", "Bubble Tea" , "Coke", "Diet Coke" , "Sprite" , "Plum Juice", "Soy Milk", "Tsing Tao Beer"];
 const menuGroups = [appItems, dimsumItems, noodleItems, beefItems, dessertItems, drinkItems];
 
+//const welcome messages
+const welcomeMsg = ["Welcome back ", "Hey ", "What's going on ", "What would you like ", "Hows it going"]
+
 
 //this function will make an alert stating that cookies will be recorded for marketing purposes
 function orderOnlineCookieNotification()
 {
 	if(confirm("Cookies are collected to track customer data and for marketing purposes. Would you like to keep them on?")){
 		cookiesOn = true;
+		takeCustomerName();
 	}
 	else {
 		cookiesOn = false;
-	}
-	
-	//tells user that cookies are on or off
-	if(cookiesOn){
-		alert("Cookies are enabled.");
-		checkCookie();
-	}
-	else{
 		alert("Cookies are disabled.");
 	}
 	
+}
+function takeCustomerName()
+{
+	alert("Cookies are enabled.");
+	checkCookie();
 }
 
 //necessary functions for cookie collection
@@ -68,7 +69,7 @@ function checkCookie()
 {
 	let user = getCookie("username");
 	if (user != "") { //if a visitor has come and has given their name and a recommendation
-		alert("Welcome back " + user + "! Lets get some " + randomMenuItem() + " today!");
+		alert(randomWelcomeMsg() + user + "! Lets get some " + randomMenuItem() + " today!");
 	}
 	else{
 		user = prompt("What is your name?", "");
@@ -84,6 +85,14 @@ function randomMenuItem()
 	var save;
 	//checks 2d array menuItem and selects a random item to return
 	save = menuGroups[Math.floor(Math.random()*5)][Math.floor(Math.random()*4)]
+	return save;
+}
+
+function randomWelcomeMsg()
+{
+	var save;
+	//checks 2d array menuItem and selects a random item to return
+	save = welcomeMsg[Math.floor(Math.random()*4)]
 	return save;
 }
 
