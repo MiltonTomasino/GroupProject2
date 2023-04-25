@@ -57,6 +57,7 @@ function createCheckout() {
     }
     // console.log(total)
     // console.log("1")
+    total = total + 5;
     document.getElementById("totalPrice").textContent = "$" + total.toFixed(2);
 }
 
