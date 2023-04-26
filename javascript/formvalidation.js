@@ -11,7 +11,7 @@ var boolCardName, boolCardNum, boolCVV, boolAddress, boolCity, boolIsEmpty;
 
 // format that user inputed email and password should follow to pass validations
 var emailValidate = new RegExp("^([a-zA-Z0-9\._]+)@([a-zA-Z0-9])+.([a-z]+)(.[a-z]+)?$"); // standard email format
-var passwordValidate = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{4,25})"); // atleast 1 lowercase, 1 uppercase, 1 num, 1 special char. length between 12 and 25
+var passwordValidate = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{12,25})"); // atleast 1 lowercase, 1 uppercase, 1 num, 1 special char. length between 12 and 25
 
 var form2 = document.getElementById("form2");
 var cardName = document.getElementById("cardName");
