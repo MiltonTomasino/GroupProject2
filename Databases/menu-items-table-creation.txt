@@ -1,0 +1,1 @@
+CREATE TABLE MenuItems (menu_id VARCHAR(255) PRIMARY KEY, name VARCHAR(255) NOT NULL, price DECIMAL (10,2) NOT NULL, description TEXT, picture VARCHAR(255), category ENUM('appetizers', 'dim sum', 'noodles', 'beef', 'desserts', 'drinks') NOT NULL);
