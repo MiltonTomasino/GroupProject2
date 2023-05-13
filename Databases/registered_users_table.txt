@@ -13,4 +13,22 @@ zip int
 PRiMARY KEY (email)
 );
 
-// create registered_users table
+
+
+
+// table to test post for website's register page
+
+create table websiteReg
+(
+userName varchar(100) NOT NULL,
+email varchar(100) NOT NULL,
+password varchar(100) NOT NULL,
+tCard varchar(100) NULL DEFAULT NULL,
+cardName varchar(100) NULL DEFAULT NULL,
+cardNum int(16) NULL DEFAULT NULL,
+Address varchar(100) NULL DEFAULT NULL,
+city varchar(100) NULL DEFAULT NULL,
+state varchar(100) NULL DEFAULT NULL,
+);
+
+

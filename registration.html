@@ -39,17 +39,17 @@
 
 			<fieldset>
 			<legend>Account Information</legend>
-			<form class="form" id="form">
+			<form class="form" id="form" method="POST">
 				
 				<div class="formItem">
 					<label>Enter Username</label>
-					<input type="text" placeholder="username" id="username">
+					<input type="text" placeholder="username" name="userName" id="username">
 					<small>error message</small>
 				</div>
 
 				<div class="formItem">
 					<label>Enter Email</label>
-					<input type="text" placeholder="abc@efg.com" id="email">
+					<input type="text" placeholder="abc@efg.com" name="email" id="email">
 					<small>error message</small>
 				</div>
 
@@ -61,7 +61,7 @@
 
 				<div class="formItem">
 					<label>Enter Password</label>
-					<input type="password" placeholder="password" id="password">
+					<input type="password" placeholder="password" name="password" id="password">
 					<small>error message</small>
 				</div>
 
@@ -85,7 +85,7 @@
 				<fieldset class="container2"> <legend>Payment & Billing Information (optional)</legend>
 				<div class="formItem">
 					<label>Type of Card</label>
-					<select name="card_type" id="card_type">
+					<select name="tCard" id="card_type">
 						<option value=""></option>
 						<option value="visa">Visa</option>
 						<option value="rupay">Amex</option>
@@ -95,13 +95,13 @@
 
 				<div class="formItem">
 					<label>Name on Card</label>
-					<input type="text" placeholder="name" id="cardName">
+					<input type="text" placeholder="name" name="cardName" id="cardName">
 					<small>error message</small>
 				</div>
 
 				<div class="formItem">
 					<label>Card Number</label>
-					<input type="number" placeholder="xxxx-xxxx-xxxx-xxxx" id="cardNum">
+					<input type="number" placeholder="xxxx-xxxx-xxxx-xxxx" name="cardNum" id="cardNum">
 					<small>error message</small>
 				</div>
 
@@ -113,13 +113,13 @@
 
 				<div class="formItem">
 					<label>Address</label>
-					<input type="text" placeholder="123 ABC way" id="address">
+					<input type="text" placeholder="123 ABC way" name="Address" id="address">
 					<small>error message</small>
 				</div>
 
 				<div class="formItem">
 					<label>City</label>
-					<input type="text" placeholder="San Francisco" id="city">
+					<input type="text" placeholder="San Francisco" name="city" id="city">
 					<small>error message</small>
 				</div>
 
