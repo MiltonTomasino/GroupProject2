@@ -18,7 +18,7 @@ PRiMARY KEY (email)
 
 // table to test post for website's register page
 
-create table websiteReg
+create table userTest
 (
 userName varchar(100) NOT NULL,
 email varchar(100) NOT NULL,
