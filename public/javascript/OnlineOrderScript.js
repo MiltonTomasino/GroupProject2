@@ -5,6 +5,9 @@
 //determines if user wants to enable cookies
 let cookiesOn = null;
 
+//customer ID that gets stored in database
+let customerID = null;
+
 //2D global array for menu items, do not expect to change
 //for the final iteration when we need to consider backend this will also help in getting orders together.
 const appItems = ["Egg Rolls", "Crab Rangoon", "Spicy Wontons","Lettuce Wraps","Pork and Shrimp Potstickers"];
@@ -20,6 +23,7 @@ const welcomeMsg = ["Welcome back ", "Hey ", "What's going on ", "What would you
 
 
 //this function will make an alert stating that cookies will be recorded for marketing purposes
+//obsolete
 function orderOnlineCookieNotification()
 {
 	if(confirm("Cookies are collected to track customer data and for marketing purposes. Would you like to keep them on?")){
@@ -32,14 +36,58 @@ function orderOnlineCookieNotification()
 	}
 	
 }
-function takeCustomerName()
+
+//generates customer name and ID and sets them to the cookie.
+function submitCustomerName()
 {
-	alert("Cookies are enabled.");
-	checkCookie();
+	fname = document.getElementById("fname").value;
+	lname = document.getElementById("lname").value;
+	console.log("First name cookie has been set. " + fname);
+	setCookie("FirstName", fname);
+	console.log("Last name cookie has been set. " + lname);
+	setCookie("LastName",lname);
+	customerID = generateCustomerID();
+	console.log("Customer ID: " + customerID);
+	setCookie("customerID", customerID);
+	document.getElementById("orderName").style.display = "none";
+}
+function generateCustomerID()
+{
+	//for testing customer id will be generated randomly.
+	//functionality customer id will be +1 of the highest numbered ID in the database
+	save = Math.floor(Math.random()*1000+1);
+	return save;
+}
+function submitCookies(cookieBool)
+{
+	if(cookieBool == 1){
+		cookiesOn = true;
+		console.log("Cookies are enabled");
+		document.getElementById("cookieMsg").innerHTML = "Cookies are enabled";
+	}
+	else
+	{
+		cookiesOn = false;
+		console.log("Cookies are disabled");
+		deleteCookie("FirstName");
+		console.log("First name was deleted");
+		deleteCookie("LastName");
+		console.log("Last name was deleted");
+		document.getElementById("cookieMsg").innerHTML = "Cookies are disabled";
+	}
+	document.getElementById("recordCookies").style.display = "none";
+	document.getElementById("okayCookies").style.display = "block";
+}
+function continueToPage()
+{
+	document.getElementById("okayCookies").style.display = "none";
 }
 
 //necessary functions for cookie collection
-//takes a name value ( expiration set for 6 months prob by default)
+//takes a name and value( expiration set for 6 months prob by default)
+
+//test to see if more cookies with different names can be appended to this cookie.
+//if not then make more cookies to store different values.
 function setCookie(cookieName, cookieValue)
 {
 	const d = new Date();
@@ -63,8 +111,12 @@ function getCookie(cookieName)
 	}
 	return "";
 }
-
+function deleteCookie(cookieName)
+{
+	document.cookie = cookieName+ "=; expires=Thu, 18 Dec 2012 12:00:00 UTC; path=/";
+}
 //checks if user has been here before
+//obsolete
 function checkCookie()
 {
 	let user = getCookie("username");
