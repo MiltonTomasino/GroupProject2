@@ -23,6 +23,9 @@ const path = require('path');
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
+const session = require('express-session');
+
+var LogErr = true;
 
 const connection = mysql.createConnection({
     host: 'localhost',
@@ -36,33 +39,51 @@ connection.connect(function (err) {
     console.log('Connected to database.')
 });
 
+app.use(session({
+    secret: 'user',
+    resave: false,
+    saveUninitialized: true
+}));
+
+app.set('views', __dirname);
+app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(express.static(__dirname));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-app.get('/', (req, res) => {
-    res.send('Hello World')
+app.use((req, res, next) => {
+    res.locals.userId = req.session.userId || null;
+    next();
 });
 
-app.get('/HomePage', (req, res) => {
-    res.sendFile(path.join(__dirname, 'HomePage.html'));
+app.get('/', (req, res) => {
+    res.render('HomePage', {userId: req.session.userId});
 });
 
 app.get('/menu', (req, res) => {
-    res.sendFile(path.join(__dirname, 'menu.html'));
+    res.render('menu', {userId: req.session.userId});
 });
 
 app.get('/aboutus', (req, res) => {
-    res.sendFile(path.join(__dirname, 'about_us.html'));
+    res.render('about_us', {userId: req.session.userId});
+});
+
+app.get('/orderonline', (req, res) => {
+    res.render('orderonline', {userId: req.session.userId});
+});
+
+app.get('/faq', (req, res) => {
+    res.render('faq', {userId: req.session.userId});
 });
 
 app.get('/register', (req, res) => {
-    res.sendFile(path.join(__dirname, 'registration.html'));
+    res.render('registration');
+});
 
-    app.post('/register', (req, res) => {
+app.post('/register', (req, res) => {
 
-        const {userName, email, password, tCard, cardName, cardNum, Address, city, state} = req.body;
+        const {firstName, lastName, email, password, tCard, cardName, address, city, state, expDate} = req.body;
 
         // salt the password by 10 char
         bcrypt.genSalt(10, function (err, salt) {
@@ -81,15 +102,16 @@ app.get('/register', (req, res) => {
             // checks to see if input is empty
             // if empty, value is null;
             const data = {
-                userName: userName,
+                firstName: firstName,
+                lastName: lastName,
                 email: email,
                 password: hash,
                 tCard: tCard || null,
                 cardName: cardName || null,
-                cardNum: cardNum ? parseInt(cardNum) : null,
-                Address: Address || null,
+                address: address || null,
                 city: city || null,
                 state: state || null,
+                expDate: expDate || null
             };
 
             // iterate through data an delete any keys that equal null
@@ -105,7 +127,7 @@ app.get('/register', (req, res) => {
             const values = Object.values(data);
 
             // use strings from keys and placeholders to insert data into userTests table
-            const sql = `INSERT INTO userTest (${keys}) VALUES (${placeholders})`;
+            const sql = `INSERT INTO newUser (${keys}) VALUES (${placeholders})`;
           
             // query to database with values as the input
             connection.query(sql, values, (err, results, fields) => {
@@ -121,8 +143,64 @@ app.get('/register', (req, res) => {
             });
         });
         
+});
+
+app.get('/signin', (req, res) => {
+    console.log(LogErr);
+    res.render('signin', {LogCheck: LogErr});
+});
+
+app.post('/signin', (req, res) => {
+
+    const { email, password}  = req.body;
+
+    connection.query('SELECT * FROM newUser WHERE email = ?', [email], (err, results) => {
+        if (err){
+            console.log(err);
+            return res.status(500).json({message: 'Internal server error'});
+        }
+
+        if (results.length === 0) {
+            LogErr = false;
+            res.redirect('/signin');
+            // return res.status(401).json({message: 'Invalid email or password'});
+        } else {
+
+        const hashedPassword = results[0].password;
+
+        bcrypt.compare(password, hashedPassword, (err, result) => {
+            if (err) {
+                console.log(err);
+                return res.status(500).json({message: 'Internal server error'});
+            } else if (!result) {
+                LogErr = false;
+                console.log(LogErr);
+                res.redirect('/signin');
+                // return res.status(401).json({message: 'Invalid email or password'});
+            } else {
+            LogErr = true;
+            req.session.userId = 'logged in';
+            console.log(req.session.userId);
+            res.redirect('/');
+
+            }
+        });
+        }
     });
 
+});
+
+app.get('/forgotpassword', (req, res) => {
+    res.render('forgotpassword', {LogCheck: LogErr});
+});
+
+app.get('/account', (req, res) => {
+    res.send('you are in account');
+});
+
+app.get('/signout', (req, res) => {
+    req.session.userId = null;
+    res.redirect('/');
 });
 
 const port = process.env.PORT || '8080'
