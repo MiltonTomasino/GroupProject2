@@ -29,9 +29,9 @@ var LogErr = true;
 
 const connection = mysql.createConnection({
     host: 'localhost',
-    user: 'student', // insert your user
-    password: 'student', // insert your password
-    database: 'restaurant' // insert your database
+    user: 'root', // insert your user
+    password: 'ks05AD033631!', // insert your password
+    database: 'RestaurantDB' // insert your database
 });
 
 connection.connect(function (err) {
@@ -136,7 +136,7 @@ app.post('/register', (req, res) => {
                     console.error(err);
                     res.send('Error submiting form');
                 } else {
-                    res.send('Form submitted sucessfully.');
+                    res.redirect('/signin');
                 }
              });
 
