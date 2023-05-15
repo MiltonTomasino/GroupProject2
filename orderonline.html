@@ -8,9 +8,10 @@
 		</title>
 		<link rel="stylesheet" href="./stylesheets/orderonline_stylesheet.css">
 		<link rel="stylesheet" href="./stylesheets/menu_stylesheet.css">
-		<script language="JavaScript" src="javascript/checkout.js"></script>
+		
 		<!-- loads scripts for page -->
 		<script src="./javascript/OnlineOrderScript.js"> </script>
+		<script src="./javascript/databsetestscript.js"> </script>
 	</head>
 	<header>
 		<div class = "pageTitle">	
@@ -39,7 +40,7 @@
 		</nav>
 	</header>
 
-	<body onload="orderOnlineCookieNotification(); createCart();">
+	<body>
 		<div>
 			<ul class = "navBar">
 				<li class = "dropdown">
@@ -56,6 +57,20 @@
 				</li>
 			</ul>
 		</div>
+		
+		<!-- sticky div will ask for name for order and record that in new entry in database-->
+		<div class= "overlay" id = "orderName">
+			<p class = "stickyText"> What is your name for this order? </p>
+			<form>
+				<label for="fname">First name:</label><br>
+				<input type="text" id="fname" name="fname"><br>
+				<label for="lname">Last name:</label><br>
+				<input type="text" id="lname" name="lname">
+				<button class = "submitButton" type = "button" onclick = "submitCustomerName(fname, lname)">Continue</button>
+			</form>
+		</div>
+		
+		
 		<form action = "payment.html">
 			<center>
 			<!-- Appetizers -->	
@@ -955,10 +970,23 @@
 					</td>
 				</tr>
 			</table>
-			<input class = "submitButton" type = "submit" value = "Check Out" onclick="getOrder()">
+			<input class = "submitButton" type = "submit" value = "Check Out">
 			<h4><a href="#top">Back to top</a><h4>
 			</center>		
 		</form>
+		<!-- sticky div that will ask if user wants to activate cookies-->
+		<div class = "stickybot" id = "recordCookies">
+			<p class = "stickyText">Our website records user data via cookies to improve your experience with us. Do you want to turn on cookies for marketing purposes? </p>
+			<button class = "submitButton" type = "button" onclick = "submitCookies(1)">Yes</button>
+			<button class = "submitButton" type = "button" onclick = "submitCookies(0)">No</button>
+			
+		</div>
+		<!-- sticky div will tell user whether or not cookies are turned on-->
+		<div class = "stickybot" id = "okayCookies">
+			<p class = "stickyText" id = "cookieMsg"></p>
+			<button class = "submitButton" type = "button" onclick = "continueToPage()">Continue</button>
+		</div>
+
 	</body>
 
 	<footer>

@@ -50,36 +50,36 @@ header{
 }
 /* Dropdown menu to navigate order online section */
 li a, .dropbtn {
-  display: inline-block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+	display: inline-block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
 }
 
 li a:hover, .dropdown:hover .dropbtn {
-  background-color: tomato;
+	background-color: tomato;
 }
 
 li.dropdown {
-  display: inline-block;
+	display: inline-block;
 }
 
 .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
 }
 
 .dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
 }
 
 .dropdown-content a:hover{
@@ -87,9 +87,45 @@ li.dropdown {
 }
 
 .dropdown:hover .dropdown-content {
-  display: block;
+	display: block;
 }
-
+/*Style for sticky classes*/
+div.overlay{
+	position: fixed; /* Sit on top of the page content */
+	display: block; /* Hidden by default */
+	width: 100%; /* Full width (cover the whole page) */
+	height: 100%; /* Full height (cover the whole page) */
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(244,244,244,0.5); /* Black background with opacity */
+	z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+	cursor: pointer; /* Add a pointer on hover */
+}
+div.stickybot{
+	background-color: azure;
+	bottom:20px;
+	position: sticky;
+	height:200px;
+}
+div.stickybot#okayCookies{
+	display:none;
+}
+input[type=text] {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+}
+p.stickyText{
+	font-family: Times New Roman;
+	color:black;
+	text-decoration: none;
+	padding: 5px;
+	padding-top: 20px;
+	font-size: 150%;
+}
 
 /*Style for Ordering Form*/
 body {
@@ -108,6 +144,10 @@ body {
 	background-color: tomato;
 	justify-content: center;
 	padding: 5px;
+}
+/* defaults all these elements as block elements*/
+#appetizers, #beef, #dimsum, #drinks, #desserts, #noodles{
+	display:block;
 }
 
 .foodItem{
@@ -140,6 +180,7 @@ tr{
 	font-size: 125%;
 }
 
+#appetizers
 .person1{
 	background-color: whitesmoke;
 	margin-right: 0px;
@@ -177,12 +218,12 @@ tr{
 }
 
 .submitButton {
-  background-color: LightGreen;
-  border: 10px;
-  color: black;
-  padding: 10px 30px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 20px;
+	background-color: LightGreen;
+	border: 10px;
+	color: black;
+	padding: 10px 30px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 20px;
 }
 
