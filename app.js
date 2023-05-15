@@ -26,12 +26,13 @@ const bcrypt = require('bcrypt');
 const session = require('express-session');
 
 var LogErr = true;
+var userEmail;
 
 const connection = mysql.createConnection({
     host: 'localhost',
-    user: 'root', // insert your user
-    password: 'ks05AD033631!', // insert your password
-    database: 'RestaurantDB' // insert your database
+    user: 'student', // insert your user
+    password: 'student', // insert your password
+    database: 'restaurant' // insert your database
 });
 
 connection.connect(function (err) {
@@ -161,10 +162,13 @@ app.post('/signin', (req, res) => {
         }
 
         if (results.length === 0) {
+
             LogErr = false;
             res.redirect('/signin');
-            // return res.status(401).json({message: 'Invalid email or password'});
+            
         } else {
+
+        console.log(email);
 
         const hashedPassword = results[0].password;
 
@@ -173,11 +177,14 @@ app.post('/signin', (req, res) => {
                 console.log(err);
                 return res.status(500).json({message: 'Internal server error'});
             } else if (!result) {
+
                 LogErr = false;
                 console.log(LogErr);
                 res.redirect('/signin');
-                // return res.status(401).json({message: 'Invalid email or password'});
+                
             } else {
+            console.log(email);
+            userEmail = email;
             LogErr = true;
             req.session.userId = 'logged in';
             console.log(req.session.userId);
