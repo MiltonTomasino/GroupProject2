@@ -8,9 +8,10 @@
 		</title>
 		<link rel="stylesheet" href="./stylesheets/orderonline_stylesheet.css">
 		<link rel="stylesheet" href="./stylesheets/menu_stylesheet.css">
-		<script language="JavaScript" src="javascript/checkout.js"></script>
+		
 		<!-- loads scripts for page -->
 		<script src="./javascript/OnlineOrderScript.js"> </script>
+		<script src="./javascript/app.js"> </script>
 	</head>
 	<header>
 		<div class = "pageTitle">	
@@ -18,9 +19,9 @@
 		</div>
 		<nav>
 			<ul class = "navBar">
-				<li><a id = "link" href = "/">Home Page</a></li>
+				<li><a id = "link" href = "HomePage.html">Home Page</a></li>
 				<div class = "menu">
-				<li><a id = "link" href = "/menu">Menu</a></li>
+				<li><a id = "link" href = "menu.html">Menu</a></li>
 					<div class = "sub-menu">
 						<p id = "menu-link" href = "./menu_items/Appetizers.html">Appetizers</p>
 						<p id = "menu-link" href = "./menu_items/Dim_Sum.html">Dim Sum</p>
@@ -30,9 +31,10 @@
 						<p id = "menu-link" href = "./menu_items/Drinks.html">Drinks</p>
 					</div>
 				</div>
-				<li><a id = "link" href = "/about_us">About Us</a></li>
-				<li><a id = "link" href = "/orderonline">Order Online</a></li>
-				<li><a id = "link" href = "/faq">FAQ</a></li>
+				<li><a id = "link" href = "about_us.html">About Us</a></li>
+				<li><a id = "link" href = "orderonline.html">Order Online</a></li>
+				<li><a id = "link" href = "faq.html">FAQ</a></li>
+				<!-- changes depending on if user is logged in or not -->
 				<% if (userId) { %>
 					<li><a id ="link" href="/account">Account</a></li>
 					<li><a id ="link" href="/signout">Sign out</a></li>
@@ -44,7 +46,7 @@
 		</nav>
 	</header>
 
-	<body onload="orderOnlineCookieNotification(); createCart();">
+	<body>
 		<div>
 			<ul class = "navBar">
 				<li class = "dropdown">
@@ -61,6 +63,20 @@
 				</li>
 			</ul>
 		</div>
+		
+		<!-- sticky div will ask for name for order and record that in new entry in database-->
+		<div class= "overlay" id = "orderName">
+			<p class = "stickyText"> What is your name for this order? </p>
+			<form>
+				<label for="fname">First name:</label><br>
+				<input type="text" id="fname" name="fname"><br>
+				<label for="lname">Last name:</label><br>
+				<input type="text" id="lname" name="lname">
+				<button class = "submitButton" type = "button" onclick = "submitCustomerName(fname, lname)">Continue</button>
+			</form>
+		</div>
+		
+		
 		<form action = "payment.html">
 			<center>
 			<!-- Appetizers -->	
@@ -960,10 +976,23 @@
 					</td>
 				</tr>
 			</table>
-			<input class = "submitButton" type = "submit" value = "Check Out" onclick="getOrder()">
+			<input class = "submitButton" type = "submit" value = "Check Out">
 			<h4><a href="#top">Back to top</a><h4>
 			</center>		
 		</form>
+		<!-- sticky div that will ask if user wants to activate cookies-->
+		<div class = "stickybot" id = "recordCookies">
+			<p class = "stickyText">Our website records user data via cookies to improve your experience with us. Do you want to turn on cookies for marketing purposes? </p>
+			<button class = "submitButton" type = "button" onclick = "submitCookies(1)">Yes</button>
+			<button class = "submitButton" type = "button" onclick = "submitCookies(0)">No</button>
+			
+		</div>
+		<!-- sticky div will tell user whether or not cookies are turned on-->
+		<div class = "stickybot" id = "okayCookies">
+			<p class = "stickyText" id = "cookieMsg"></p>
+			<button class = "submitButton" type = "button" onclick = "continueToPage()">Continue</button>
+		</div>
+
 	</body>
 
 	<footer>
