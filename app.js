@@ -85,13 +85,39 @@ app.get('/payment', (req, res) => {
                         isLogin: req.session.isLogin,
                         userFirstName: req.session.userFirstName,
                         userLastName: req.session.userLastName,
-                        userEmail: req.session.userEmail
+                        userEmail: req.session.userEmail,
+                        userAddr: req.session.userAddr,
+                        userCity: req.session.userCity,
+                        userState: req.session.userState,
+                        userZip: req.session.userZip
                     });
 });
 
 app.post('/payment', (req, res) => {
     console.log(req.body);
-    // add order to database
+
+    const data = {
+        firstName: req.body.fname,
+        lastName: req.body.lname,
+        email:req.body.email,
+        address: req.body.street1,
+        phone: req.body.phone || null,
+    };
+
+    Object.keys(data).forEach((key) => (data[key] === null) && delete data[key]);
+    const keys = Object.keys(data).join(', ');
+    const placeholders = Object.values(data).map(() => '?').join(', ');
+    const values = Object.values(data);
+    const sql = `INSERT INTO customers (${keys}) VALUES (${placeholders})`;
+
+    connection.query(sql, values, (err, results, fields) => {
+        if (err){
+            console.log(err);
+            console.error(err);
+            res.send('Error submiting order');
+        }
+    });
+
     res.render('orderplaced', {
                         userId: req.session.userId, 
                         isLogin: req.session.isLogin,
@@ -103,9 +129,10 @@ app.post('/payment', (req, res) => {
                         city: req.body.city,
                         state: req.body.state,
                         zip: req.body.zip
-                    });
+    });
 
 });
+
 
 app.get('/register', (req, res) => {
     res.render('registration');
@@ -224,6 +251,10 @@ app.post('/signin', (req, res) => {
             req.session.userEmail = email;
             req.session.userFirstName = results[0].firstName;
             req.session.userLastName = results[0].lastName;
+            req.session.userAddr = results[0].address;
+            req.session.userCity = results[0].city;
+            req.session.userState = results[0].state;
+            req.session.userZip = results[0].zip;
             res.redirect('/');
 
             }
