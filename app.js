@@ -84,7 +84,7 @@ app.get('/register', (req, res) => {
 
 app.post('/register', (req, res) => {
 
-        const {firstName, lastName, email, password, tCard, cardName, address, city, state, expDate} = req.body;
+        const {firstName, lastName, email, password, tCard, cardName, address, city, state, expDate, zip} = req.body;
 
         // salt the password by 10 char
         bcrypt.genSalt(10, function (err, salt) {
@@ -112,7 +112,8 @@ app.post('/register', (req, res) => {
                 address: address || null,
                 city: city || null,
                 state: state || null,
-                expDate: expDate || null
+                expDate: expDate || null,
+                zip: zip || null
             };
 
             // iterate through data an delete any keys that equal null
