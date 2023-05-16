@@ -12,7 +12,6 @@
 		<!-- loads scripts for page -->
 		<script src="./javascript/OnlineOrderScript.js"> </script>
 		<script src="javascript/checkout.js"></script>
-		<script src="./javascript/app.js"> </script>
 		
 	</head>
 	<header>
@@ -48,7 +47,7 @@
 		</nav>
 	</header>
 
-	<body onload="createCart();">
+	<body onload="checkSaveCookie(); checkUserCookie(); createCart();">
 		<div>
 			<ul class = "navBar">
 				<li class = "dropdown">

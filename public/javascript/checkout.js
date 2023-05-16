@@ -51,6 +51,9 @@ function createCheckout(receipt=false) {
         if (cart[i][0] > 0) {
             if(receipt==false){
                 createCheckoutItem(i);
+                    if (document.getElementById('orderInfo') !=null) {
+                        document.getElementById('orderInfo').value = document.getElementById('orderInfo').value + (cart[i][0] + " " + cart[i][1] + "; ");
+                    }
             } else {
                 createCheckoutItem(i,true);
             }
@@ -71,6 +74,7 @@ function createCheckoutItem(id, receipt=false) {
     // create each item in cart
     var cart = JSON.parse(window.localStorage.getItem("cart"));
 
+    
     var productTag = document.createElement("p");
     productTag.setAttribute("id", cart[id][1]);
 
