@@ -50,6 +50,7 @@ function submitCookies(cookieBool)
 	if(cookieBool == 1){
 		cookiesOn = true;
 		console.log("Cookies are enabled");
+		saveInterestedItems();
 		setCookie("saveCookies", 1);
 		document.getElementById("cookieMsg").innerHTML = "Cookies are enabled";
 	}
@@ -121,6 +122,8 @@ function checkSaveCookie()
 	if (save != "") { //if a visitor has come before and wanted to save cookies it'll turn off that popup
 		let msg = randomWelcomeMsg() + getCookie("FirstName") + " " + getCookie("LastName") + ". Lets get some " + randomMenuItem() + " today!";
 		console.log("cookies are being saved");
+		saveInterestedItems();
+		console.log("items are being saved");
 		document.getElementById("recordCookies").style.display = "none";
 		document.getElementById("cookieMsg").innerHTML = msg;
 		document.getElementById("okayCookies").style.display = "block";
@@ -130,6 +133,54 @@ function checkSaveCookie()
 		console.log("cookies aren't being saved.");
 		return false;
 	}
+}
+//if cookies are enabled this will add event listeners to every menu item to track user interaction
+function saveInterestedItems()
+{
+	//event listeners for appetizers
+	document.getElementById("ER_Number").addEventListener("click" , function() { setCookie( menuGroups[0][0] , true) } );
+	document.getElementById("CR_Number").addEventListener("click" , function() { setCookie( menuGroups[0][1] , true) } );
+	document.getElementById("SW_Number").addEventListener("click" , function() { setCookie( menuGroups[0][2] , true) } );
+	document.getElementById("LW_Number").addEventListener("click" , function() { setCookie( menuGroups[0][3] , true) } );
+	document.getElementById("PSP_Number").addEventListener("click" , function() { setCookie( menuGroups[0][4]  , true) } );
+	
+	//event listeners for dimsum
+	document.getElementById("CSB_Number").addEventListener("click" , function() { setCookie( menuGroups[1][0]  , true) } );
+	document.getElementById("HGNumber").addEventListener("click" , function() { setCookie( menuGroups[1][1], true) } );
+	document.getElementById("SM_Number").addEventListener("click" , function() { setCookie( menuGroups[1][2] , true) } );
+	document.getElementById("LBG_Number").addEventListener("click" , function() { setCookie( menuGroups[1][3] , true) } );
+	document.getElementById("LMG_Number").addEventListener("click" , function() { setCookie( menuGroups[1][4] , true) } );
+	
+	//event listeners for noodles
+	document.getElementById("BeefChowFun_Number").addEventListener("click" , function() { setCookie( menuGroups[2][0]  , true) } );
+	document.getElementById("DanDan_Number").addEventListener("click" , function() { setCookie( menuGroups[2][1], true) } );
+	document.getElementById("BeefSoupNoodles_Number").addEventListener("click" , function() { setCookie( menuGroups[2][2] , true) } );
+	document.getElementById("SpicyBeefSoupNoodles_Number").addEventListener("click" , function() { setCookie( menuGroups[2][3] , true) } );
+	document.getElementById("SingaporeNoodles_Number").addEventListener("click" , function() { setCookie( menuGroups[2][4] , true) } );
+	document.getElementById("WontonNoodles_Number").addEventListener("click" , function() { setCookie( menuGroups[2][5] , true) } );
+	
+	//event listeners for beef
+	document.getElementById("BroccoliBeef_Number").addEventListener("click" , function() { setCookie( menuGroups[3][0]  , true) } );
+	document.getElementById("MongolianBeef_Number").addEventListener("click" , function() { setCookie( menuGroups[3][1], true) } );
+	document.getElementById("VegetableStirfryBeef_Number").addEventListener("click" , function() { setCookie( menuGroups[3][2] , true) } );
+	document.getElementById("KungpaoBeef_Number").addEventListener("click" , function() { setCookie( menuGroups[3][3] , true) } );
+	
+	//event listeners for desserts
+	document.getElementById("CustardTartDessert_Number").addEventListener("click" , function() { setCookie( menuGroups[4][0]  , true) } );
+	document.getElementById("RedBeanSoupDessert_Number").addEventListener("click" , function() { setCookie( menuGroups[4][1], true) } );
+	document.getElementById("SesameBallsDessert_Number").addEventListener("click" , function() { setCookie( menuGroups[4][2] , true) } );
+	document.getElementById("SweetTaroSoupDessert_Number").addEventListener("click" , function() { setCookie( menuGroups[4][3] , true) } );
+	document.getElementById("MangoStickyDessert_Number").addEventListener("click" , function() { setCookie( menuGroups[4][4] , true) } );
+	
+	//event listeners for drinks
+	document.getElementById("OolongTeaDrink_Number").addEventListener("click" , function() { setCookie( menuGroups[5][0] , true) } );
+	document.getElementById("BubbleTeaDrink_Number").addEventListener("click" , function() { setCookie( menuGroups[5][1] , true) } );
+	document.getElementById("CokeDrink_Number").addEventListener("click" , function() { setCookie( menuGroups[5][2] , true) } );
+	document.getElementById("DietCokeDrink_Number").addEventListener("click" , function() { setCookie( menuGroups[5][3] , true) } );
+	document.getElementById("SpriteDrink_Number").addEventListener("click" , function() { setCookie( menuGroups[5][4]  , true) } );
+	document.getElementById("PlumDrink_Number").addEventListener("click" , function() { setCookie( menuGroups[5][5] , true) } );
+	document.getElementById("SoyMilkDrink_Number").addEventListener("click" , function() { setCookie( menuGroups[5][6] , true) } );
+	document.getElementById("TTBeerDrink_Number").addEventListener("click" , function() { setCookie( menuGroups[5][7] , true) } );
 }
 //takes a random item within the 2D menu array and returns it
 function randomMenuItem()
@@ -143,7 +194,7 @@ function randomMenuItem()
 function randomWelcomeMsg()
 {
 	var save;
-	//checks 2d array menuItem and selects a random item to return
+	//checks welcome msg array and selects a random message
 	save = welcomeMsg[Math.floor(Math.random()*4)];
 	return save;
 }
