@@ -70,7 +70,10 @@ function createCheckout(receipt=false) {
 function createCheckoutItem(id, receipt=false) {
     // create each item in cart
     var cart = JSON.parse(window.localStorage.getItem("cart"));
-
+    if (document.getElementById('orderInfo') !=null) {
+        document.getElementById('orderInfo').value = cart;
+    }
+    
     var productTag = document.createElement("p");
     productTag.setAttribute("id", cart[id][1]);
 
