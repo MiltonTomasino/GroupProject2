@@ -7,7 +7,7 @@ var password2 = document.getElementById("password2");
 
 // bool var to see if requirements are met in order to submit
 var boolFirstName, boolPassword, boolPassword2, boolLastName, boolEmail;
-var boolCardName, boolCardNum, boolCVV, boolAddress, boolCity, boolIsEmpty, boolExpDate;
+var boolCardName, boolCardNum, boolCVV, boolAddress, boolCity, boolIsEmpty, boolExpDate, boolZip;
 
 // format that user inputed email and password should follow to pass validations
 var emailValidate = new RegExp("^([a-zA-Z0-9\._]+)@([a-zA-Z0-9])+.([a-z]+)(.[a-z]+)?$"); // standard email format
@@ -20,12 +20,13 @@ var cvv = document.getElementById("cvv");
 var expDate = document.getElementById("expDate");
 var address = document.getElementById("address");
 var city = document.getElementById("city");
+var zip = document.getElementById("zip");
 
 // since payment and billing is optionall, all elements should be empty if not using them
 // if even 1 is filled, the rest have to be filled
 function isEmpty(){
     if (cardName.value !== '' || cardNum.value !== '' || cvv.value !== '' || expDate.value !== ''
-        || address.value !== '' || city.value !== '')
+        || address.value !== '' || city.value !== '' || zip.value !== '')
         {
             return false;
 
@@ -51,7 +52,7 @@ form.addEventListener('submit', (e) => {
 
        // if payment & billing and account info passes all validations, submit form
     } else if (boolFirstName && boolPassword && boolPassword2 & boolLastName && boolEmail &&
-               boolCardName && boolCardNum && boolCVV && boolAddress && boolCity && boolExpDate)
+               boolCardName && boolCardNum && boolCVV && boolAddress && boolCity && boolExpDate && boolZip)
     {
         document.getElementById('form').submit();
 
@@ -74,6 +75,7 @@ function checkInputs(){
     let dateValue = expDate.value;
     let addressValue = address.value;
     let cityValue = city.value;
+    let zipValue = zip.value;
 
 
     // sets bool val to false if certain validations aren't met
@@ -219,6 +221,15 @@ function checkInputs(){
         } else {
             boolExpDate = true;
         }
+
+        if (zipValue === ''){
+            boolZip = false;
+            setError(zip, 'ZIP is emty');
+        } else {
+            boolZip = true;
+            revertClass(zip);
+        }
+
     }
 
     
