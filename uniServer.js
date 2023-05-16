@@ -37,18 +37,7 @@ const connection = mysql.createConnection({
 
 connection.connect(function (err) {
     if (err) throw err;
-    console.log('Connected to database.')
-
-    // Thomas customer's database test functions
-    /*Test functions*/
-	//modifyData('100000001','firstname', 'Liana');
-	//insertData('100000008, 'Brandon', 'Quismorio');
-	populateDatabase();
-	
-	connection.query("SELECT * FROM customers", function (err, result, fields) {
-		if(err) throw err;
-		console.log(result);
-	});
+    console.log('Connected to database.');
 });
 
 app.use(session({
@@ -70,7 +59,7 @@ app.use((req, res, next) => {
 });
 
 app.get('/', (req, res) => {
-    res.render('HomePage', {userId: req.session.userId});
+    res.render('HomePage', {userId: req.session.userId, firstName: req.session.userFirstName});
 });
 
 app.get('/menu', (req, res) => {
@@ -89,13 +78,69 @@ app.get('/faq', (req, res) => {
     res.render('faq', {userId: req.session.userId});
 });
 
+app.get('/payment', (req, res) => {
+    // res.render('payment');
+    res.render('payment', {
+                        userId: req.session.userId, 
+                        isLogin: req.session.isLogin,
+                        userFirstName: req.session.userFirstName,
+                        userLastName: req.session.userLastName,
+                        userEmail: req.session.userEmail,
+                        userAddr: req.session.userAddr,
+                        userCity: req.session.userCity,
+                        userState: req.session.userState,
+                        userZip: req.session.userZip
+                    });
+});
+
+app.post('/payment', (req, res) => {
+    console.log(req.body);
+
+    const data = {
+        firstName: req.body.fname,
+        lastName: req.body.lname,
+        email:req.body.email,
+        address: req.body.street1,
+        phone: req.body.phone || null,
+    };
+
+    Object.keys(data).forEach((key) => (data[key] === null) && delete data[key]);
+    const keys = Object.keys(data).join(', ');
+    const placeholders = Object.values(data).map(() => '?').join(', ');
+    const values = Object.values(data);
+    const sql = `INSERT INTO customers (${keys}) VALUES (${placeholders})`;
+
+    connection.query(sql, values, (err, results, fields) => {
+        if (err){
+            console.log(err);
+            console.error(err);
+            res.send('Error submiting order');
+        }
+    });
+
+    res.render('orderplaced', {
+                        userId: req.session.userId, 
+                        isLogin: req.session.isLogin,
+                        firstName: req.body.fname,
+                        lastName: req.body.lname,
+                        email: req.body.email,
+                        add1: req.body.street1,
+                        add2: req.body.street2,
+                        city: req.body.city,
+                        state: req.body.state,
+                        zip: req.body.zip
+    });
+
+});
+
+
 app.get('/register', (req, res) => {
     res.render('registration');
 });
 
 app.post('/register', (req, res) => {
 
-        const {firstName, lastName, email, password, tCard, cardName, address, city, state, expDate} = req.body;
+        const {firstName, lastName, email, password, tCard, cardName, address, city, state, expDate, zip} = req.body;
 
         // salt the password by 10 char
         bcrypt.genSalt(10, function (err, salt) {
@@ -123,7 +168,8 @@ app.post('/register', (req, res) => {
                 address: address || null,
                 city: city || null,
                 state: state || null,
-                expDate: expDate || null
+                expDate: expDate || null,
+                zip: zip || null
             };
 
             // iterate through data an delete any keys that equal null
@@ -158,8 +204,15 @@ app.post('/register', (req, res) => {
 });
 
 app.get('/signin', (req, res) => {
+    if (!req.session.isLogin){
+
     console.log(LogErr);
     res.render('signin', {LogCheck: LogErr});
+
+    } else {
+
+        res.redirect('/');
+    }
 });
 
 app.post('/signin', (req, res) => {
@@ -179,8 +232,6 @@ app.post('/signin', (req, res) => {
             
         } else {
 
-        console.log(email);
-
         const hashedPassword = results[0].password;
 
         bcrypt.compare(password, hashedPassword, (err, result) => {
@@ -194,11 +245,16 @@ app.post('/signin', (req, res) => {
                 res.redirect('/signin');
                 
             } else {
-            console.log(email);
-            userEmail = email;
             LogErr = true;
             req.session.userId = 'logged in';
-            console.log(req.session.userId);
+            req.session.isLogin = true;
+            req.session.userEmail = email;
+            req.session.userFirstName = results[0].firstName;
+            req.session.userLastName = results[0].lastName;
+            req.session.userAddr = results[0].address;
+            req.session.userCity = results[0].city;
+            req.session.userState = results[0].state;
+            req.session.userZip = results[0].zip;
             res.redirect('/');
 
             }
@@ -213,11 +269,37 @@ app.get('/forgotpassword', (req, res) => {
 });
 
 app.get('/account', (req, res) => {
-    res.send('you are in account');
+    if (req.session.isLogin){
+
+        res.render('account', {firstName: req.session.userFirstName});
+
+    } else {
+
+        res.redirect('/');
+    }
+});
+
+app.post('/account', (req, res) => {
+    
+    const {tCard, cardName, zip, expDate, address, city, state} = req.body;
+
+    const sql = `UPDATE newUser SET tCard=?, cardName=?, zip=?, expDate=?, address=?, city=?, state=? WHERE email = ?`;
+    const values = [tCard, cardName, zip, expDate, address, city, state, req.session.userEmail];
+
+    connection.query(sql, values, (err, results, fields) => {
+        if (err){
+            res.send('Error updating user');
+        }
+
+        res.redirect('/account');
+    });
+
+    
 });
 
 app.get('/signout', (req, res) => {
     req.session.userId = null;
+    req.session.isLogin = false;
     res.redirect('/');
 });
 
