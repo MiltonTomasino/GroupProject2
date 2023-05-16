@@ -78,6 +78,17 @@ app.get('/faq', (req, res) => {
     res.render('faq', {userId: req.session.userId});
 });
 
+app.get('/payment', (req, res) => {
+    // res.render('payment');
+    res.render('payment', {
+                        userId: req.session.userId, 
+                        isLogin: req.session.isLogin,
+                        userFirstName: req.session.userFirstName,
+                        userLastName: req.session.userLastName,
+                        userEmail: req.session.userEmail
+                    });
+});
+
 app.get('/register', (req, res) => {
     res.render('registration');
 });
