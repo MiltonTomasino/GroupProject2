@@ -42,7 +42,7 @@ function generateCustomerID()
 {
 	//for testing customer id will be generated randomly.
 	//functionality customer id will be +1 of the highest numbered ID in the database
-	save = Math.floor(Math.random()*1000+1);
+	save = Math.floor(Math.random()*100000000000+1);
 	return save;
 }
 function submitCookies(cookieBool)
@@ -50,6 +50,7 @@ function submitCookies(cookieBool)
 	if(cookieBool == 1){
 		cookiesOn = true;
 		console.log("Cookies are enabled");
+		setCookie("saveCookies", 1);
 		document.getElementById("cookieMsg").innerHTML = "Cookies are enabled";
 	}
 	else
@@ -72,9 +73,6 @@ function continueToPage()
 
 //necessary functions for cookie collection
 //takes a name and value( expiration set for 6 months prob by default)
-
-//test to see if more cookies with different names can be appended to this cookie.
-//if not then make more cookies to store different values.
 function setCookie(cookieName, cookieValue)
 {
 	const d = new Date();
@@ -82,7 +80,6 @@ function setCookie(cookieName, cookieValue)
 	let expires = "expires="+d.toUTCString();
 	document.cookie = cookieName + "=" + cookieValue + ";" + expires + ";path=/";
 }
-
 function getCookie(cookieName)
 {
 	let name = cookieName + "=";
@@ -102,12 +99,11 @@ function deleteCookie(cookieName)
 {
 	document.cookie = cookieName+ "=; expires=Thu, 18 Dec 2012 12:00:00 UTC; path=/";
 }
-//checks if user has been here before
-//obsolete
+//checks if user has been here before by checking unique customer id cookie thats generated regardless of whether a user has entered their name
 function checkUserCookie()
 {
 	let user = getCookie("customerID");
-	if (user != "") { //if a visitor has come and has given their name and a recommendation
+	if (user != "") { //if a visitor has come before turns off the overlay div.
 		console.log("there is a customerID");
 		document.getElementById("orderName").style.display = "none";
 		return true;
@@ -118,6 +114,23 @@ function checkUserCookie()
 	}
 }
 
+//checks if user wants to save cookies based on if they clicked yes or no
+function checkSaveCookie()
+{
+	let save = getCookie("saveCookies");
+	if (save != "") { //if a visitor has come before and wanted to save cookies it'll turn off that popup
+		let msg = randomWelcomeMsg() + getCookie("FirstName") + " " + getCookie("LastName") + ". Lets get some " + randomMenuItem() + " today!";
+		console.log("cookies are being saved");
+		document.getElementById("recordCookies").style.display = "none";
+		document.getElementById("cookieMsg").innerHTML = msg;
+		document.getElementById("okayCookies").style.display = "block";
+		return true;
+	}
+	else{
+		console.log("cookies aren't being saved.");
+		return false;
+	}
+}
 //takes a random item within the 2D menu array and returns it
 function randomMenuItem()
 {
