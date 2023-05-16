@@ -85,7 +85,11 @@ app.get('/payment', (req, res) => {
                         isLogin: req.session.isLogin,
                         userFirstName: req.session.userFirstName,
                         userLastName: req.session.userLastName,
-                        userEmail: req.session.userEmail
+                        userEmail: req.session.userEmail,
+                        userAddr: req.session.userAddr,
+                        userCity: req.session.userCity,
+                        userState: req.session.userState,
+                        userZip: req.session.userZip
                     });
 });
 
@@ -242,6 +246,10 @@ app.post('/signin', (req, res) => {
             req.session.userEmail = email;
             req.session.userFirstName = results[0].firstName;
             req.session.userLastName = results[0].lastName;
+            req.session.userAddr = results[0].address;
+            req.session.userCity = results[0].city;
+            req.session.userState = results[0].state;
+            req.session.userZip = results[0].zip;
             res.redirect('/');
 
             }
