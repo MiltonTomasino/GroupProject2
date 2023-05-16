@@ -107,7 +107,7 @@ div.stickybot{
 	background-color: azure;
 	bottom:20px;
 	position: sticky;
-	height:200px;
+	height:150px;
 }
 div.stickybot#okayCookies{
 	display:none;
