@@ -102,6 +102,7 @@ app.post('/payment', (req, res) => {
         email:req.body.email,
         address: req.body.street1,
         phone: req.body.phone || null,
+        orderInfo: req.body.orderInfo
     };
 
     Object.keys(data).forEach((key) => (data[key] === null) && delete data[key]);
