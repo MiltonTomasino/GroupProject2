@@ -78,13 +78,24 @@ app.get('/faq', (req, res) => {
     res.render('faq', {userId: req.session.userId});
 });
 
+app.get('/payment', (req, res) => {
+    // res.render('payment');
+    res.render('payment', {
+                        userId: req.session.userId, 
+                        isLogin: req.session.isLogin,
+                        userFirstName: req.session.userFirstName,
+                        userLastName: req.session.userLastName,
+                        userEmail: req.session.userEmail
+                    });
+});
+
 app.get('/register', (req, res) => {
     res.render('registration');
 });
 
 app.post('/register', (req, res) => {
 
-        const {firstName, lastName, email, password, tCard, cardName, address, city, state, expDate} = req.body;
+        const {firstName, lastName, email, password, tCard, cardName, address, city, state, expDate, zip} = req.body;
 
         // salt the password by 10 char
         bcrypt.genSalt(10, function (err, salt) {
@@ -112,7 +123,8 @@ app.post('/register', (req, res) => {
                 address: address || null,
                 city: city || null,
                 state: state || null,
-                expDate: expDate || null
+                expDate: expDate || null,
+                zip: zip || null
             };
 
             // iterate through data an delete any keys that equal null
@@ -183,11 +195,12 @@ app.post('/signin', (req, res) => {
                 res.redirect('/signin');
                 
             } else {
-            console.log(email);
-            userEmail = email;
             LogErr = true;
             req.session.userId = 'logged in';
-            console.log(req.session.userId);
+            req.session.isLogin = true;
+            req.session.userEmail = email;
+            req.session.userFirstName = results[0].firstName;
+            req.session.userLastName = results[0].lastName;
             res.redirect('/');
 
             }
@@ -207,6 +220,7 @@ app.get('/account', (req, res) => {
 
 app.get('/signout', (req, res) => {
     req.session.userId = null;
+    req.session.isLogin = false;
     res.redirect('/');
 });
 
