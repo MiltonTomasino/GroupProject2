@@ -59,7 +59,7 @@ app.use((req, res, next) => {
 });
 
 app.get('/', (req, res) => {
-    res.render('HomePage', {userId: req.session.userId});
+    res.render('HomePage', {userId: req.session.userId, firstName: req.session.userFirstName});
 });
 
 app.get('/menu', (req, res) => {
@@ -177,8 +177,15 @@ app.post('/register', (req, res) => {
 });
 
 app.get('/signin', (req, res) => {
+    if (!req.session.isLogin){
+
     console.log(LogErr);
     res.render('signin', {LogCheck: LogErr});
+
+    } else {
+
+        res.redirect('/');
+    }
 });
 
 app.post('/signin', (req, res) => {
@@ -197,8 +204,6 @@ app.post('/signin', (req, res) => {
             res.redirect('/signin');
             
         } else {
-
-        console.log(email);
 
         const hashedPassword = results[0].password;
 
@@ -233,7 +238,32 @@ app.get('/forgotpassword', (req, res) => {
 });
 
 app.get('/account', (req, res) => {
-    res.send('you are in account');
+    if (req.session.isLogin){
+
+        res.render('account', {firstName: req.session.userFirstName});
+
+    } else {
+
+        res.redirect('/');
+    }
+});
+
+app.post('/account', (req, res) => {
+    
+    const {tCard, cardName, zip, expDate, address, city, state} = req.body;
+
+    const sql = `UPDATE newUser SET tCard=?, cardName=?, zip=?, expDate=?, address=?, city=?, state=? WHERE email = ?`;
+    const values = [tCard, cardName, zip, expDate, address, city, state, req.session.userEmail];
+
+    connection.query(sql, values, (err, results, fields) => {
+        if (err){
+            res.send('Error updating user');
+        }
+
+        res.redirect('/account');
+    });
+
+    
 });
 
 app.get('/signout', (req, res) => {
