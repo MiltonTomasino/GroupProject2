@@ -22,24 +22,10 @@ const menuGroups = [appItems, dimsumItems, noodleItems, beefItems, dessertItems,
 const welcomeMsg = ["Welcome back ", "Hey ", "What's going on ", "What would you like ", "Hows it going"]
 
 
-//this function will make an alert stating that cookies will be recorded for marketing purposes
-//obsolete
-function orderOnlineCookieNotification()
-{
-	if(confirm("Cookies are collected to track customer data and for marketing purposes. Would you like to keep them on?")){
-		cookiesOn = true;
-		takeCustomerName();
-	}
-	else {
-		cookiesOn = false;
-		alert("Cookies are disabled.");
-	}
-	
-}
-
 //generates customer name and ID and sets them to the cookie.
 function submitCustomerName()
-{
+{	
+	console.log("cookies are empty");
 	fname = document.getElementById("fname").value;
 	lname = document.getElementById("lname").value;
 	console.log("First name cookie has been set. " + fname);
@@ -50,6 +36,7 @@ function submitCustomerName()
 	console.log("Customer ID: " + customerID);
 	setCookie("customerID", customerID);
 	document.getElementById("orderName").style.display = "none";
+	
 }
 function generateCustomerID()
 {
@@ -117,17 +104,17 @@ function deleteCookie(cookieName)
 }
 //checks if user has been here before
 //obsolete
-function checkCookie()
+function checkUserCookie()
 {
-	let user = getCookie("username");
+	let user = getCookie("customerID");
 	if (user != "") { //if a visitor has come and has given their name and a recommendation
-		alert(randomWelcomeMsg() + user + "! Lets get some " + randomMenuItem() + " today!");
+		console.log("there is a customerID");
+		document.getElementById("orderName").style.display = "none";
+		return true;
 	}
 	else{
-		user = prompt("What is your name?", "");
-		if(user != "" && user != null) {
-			setCookie("username", user);
-		}
+		console.log("there is no customerID");
+		return false;
 	}
 }
 
@@ -136,7 +123,7 @@ function randomMenuItem()
 {
 	var save;
 	//checks 2d array menuItem and selects a random item to return
-	save = menuGroups[Math.floor(Math.random()*5)][Math.floor(Math.random()*4)]
+	save = menuGroups[Math.floor(Math.random()*5)][Math.floor(Math.random()*4)];
 	return save;
 }
 
@@ -144,7 +131,7 @@ function randomWelcomeMsg()
 {
 	var save;
 	//checks 2d array menuItem and selects a random item to return
-	save = welcomeMsg[Math.floor(Math.random()*4)]
+	save = welcomeMsg[Math.floor(Math.random()*4)];
 	return save;
 }
 
