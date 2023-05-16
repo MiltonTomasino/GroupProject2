@@ -135,7 +135,14 @@ app.post('/payment', (req, res) => {
 
 
 app.get('/register', (req, res) => {
-    res.render('registration');
+    if (!req.session.isLogin){
+
+        res.render('registration');
+
+    } else {
+        
+        res.redirect('/');
+    }
 });
 
 app.post('/register', (req, res) => {
@@ -262,10 +269,6 @@ app.post('/signin', (req, res) => {
         }
     });
 
-});
-
-app.get('/forgotpassword', (req, res) => {
-    res.render('forgotpassword', {LogCheck: LogErr});
 });
 
 app.get('/account', (req, res) => {
