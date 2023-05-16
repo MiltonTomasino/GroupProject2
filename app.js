@@ -89,6 +89,24 @@ app.get('/payment', (req, res) => {
                     });
 });
 
+app.post('/payment', (req, res) => {
+    console.log(req.body);
+    // add order to database
+    res.render('orderplaced', {
+                        userId: req.session.userId, 
+                        isLogin: req.session.isLogin,
+                        firstName: req.body.fname,
+                        lastName: req.body.lname,
+                        email: req.body.email,
+                        add1: req.body.street1,
+                        add2: req.body.street2,
+                        city: req.body.city,
+                        state: req.body.state,
+                        zip: req.body.zip
+                    });
+
+});
+
 app.get('/register', (req, res) => {
     res.render('registration');
 });
