@@ -46,7 +46,7 @@
 		</nav>
 	</header>
 
-	<body>
+	<body onload="orderOnlineCookieNotification(); createCart();">
 		<div>
 			<ul class = "navBar">
 				<li class = "dropdown">
@@ -77,7 +77,7 @@
 		</div>
 		
 		
-		<form action = "payment.html">
+		<form action = "payment">
 			<center>
 			<!-- Appetizers -->	
 			<h2 class = "foodTitle" id = "appetizers"> Appetizers </h2>
@@ -976,7 +976,8 @@
 					</td>
 				</tr>
 			</table>
-			<input class = "submitButton" type = "submit" value = "Check Out">
+			<!-- getOrder() for payment page -->
+			<input class = "submitButton" type = "submit" value = "Check Out" onclick="getOrder()">
 			<h4><a href="#top">Back to top</a><h4>
 			</center>		
 		</form>
