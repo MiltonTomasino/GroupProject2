@@ -184,11 +184,12 @@ app.post('/signin', (req, res) => {
                 res.redirect('/signin');
                 
             } else {
-            console.log(email);
-            userEmail = email;
             LogErr = true;
             req.session.userId = 'logged in';
-            console.log(req.session.userId);
+            req.session.isLogin = true;
+            req.session.userEmail = email;
+            req.session.userFirstName = results[0].firstName;
+            req.session.userLastName = results[0].lastName;
             res.redirect('/');
 
             }
@@ -208,6 +209,7 @@ app.get('/account', (req, res) => {
 
 app.get('/signout', (req, res) => {
     req.session.userId = null;
+    req.session.isLogin = false;
     res.redirect('/');
 });
 
