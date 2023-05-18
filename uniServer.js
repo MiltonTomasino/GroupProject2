@@ -37,7 +37,7 @@ const connection = mysql.createConnection({
 
 connection.connect(function (err) {
     if (err) throw err;
-    console.log('Connected to database.');
+    console.log('Connected to database.')
 });
 
 app.use(session({
@@ -102,6 +102,7 @@ app.post('/payment', (req, res) => {
         email:req.body.email,
         address: req.body.street1,
         phone: req.body.phone || null,
+        orderInfo: req.body.orderInfo
     };
 
     Object.keys(data).forEach((key) => (data[key] === null) && delete data[key]);
@@ -135,7 +136,14 @@ app.post('/payment', (req, res) => {
 
 
 app.get('/register', (req, res) => {
-    res.render('registration');
+    if (!req.session.isLogin){
+
+        res.render('registration');
+
+    } else {
+        
+        res.redirect('/');
+    }
 });
 
 app.post('/register', (req, res) => {
@@ -262,10 +270,6 @@ app.post('/signin', (req, res) => {
         }
     });
 
-});
-
-app.get('/forgotpassword', (req, res) => {
-    res.render('forgotpassword', {LogCheck: LogErr});
 });
 
 app.get('/account', (req, res) => {
